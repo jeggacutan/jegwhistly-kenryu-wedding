@@ -7,6 +7,7 @@
 <title>Kenryu & Jeg | January 10, 2027</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
+/* Luxury palette: deep burgundy + rose-champagne */
 :root{
 --burgundy:#4a0a18; --burgundy2:#651223; --velvet:#28040e;
 --rose:#c99b86; --rose-light:#f3dcc9; --rose-deep:#a6725e;
@@ -18,12 +19,14 @@ html{scroll-behavior:smooth}
 body{font-family:'Montserrat',sans-serif;background:var(--cream);color:var(--ink);line-height:1.8;overflow-x:hidden}
 h1,h2,h3{font-family:'Cormorant Garamond',serif;font-weight:600}
 .script{font-family:'Great Vibes',cursive}
+/* Loader */
 #loader{position:fixed;inset:0;background:var(--velvet);z-index:9999;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:16px;transition:opacity .8s,visibility .8s}
 #loader.hide{opacity:0;visibility:hidden}
 #loader .mono{width:112px;height:112px;border:1px solid var(--rose);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Great Vibes',cursive;font-size:2.6rem;color:var(--rose-light);position:relative}
 #loader .mono::after{content:'';position:absolute;inset:8px;border:1px solid rgba(201,155,134,.4);border-radius:50%}
 #loader p{color:var(--rose-light);letter-spacing:5px;font-size:.7rem;text-transform:uppercase;animation:pulse 1.5s infinite}
 @keyframes pulse{0%,100%{opacity:.5}50%{opacity:1}}
+/* Nav */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:18px 42px;transition:.4s;background:linear-gradient(to bottom,rgba(40,4,14,.85),transparent)}
 nav.scrolled{background:rgba(40,4,14,.96);backdrop-filter:blur(12px);padding:12px 42px;border-bottom:1px solid rgba(201,155,134,.35)}
 nav .logo{display:flex;align-items:center;gap:12px;color:var(--blush)}
@@ -35,6 +38,7 @@ nav a::after{content:'';position:absolute;left:0;bottom:-6px;width:0;height:1px;
 nav a:hover::after{width:100%}
 .menu-btn{display:none;background:none;border:1px solid var(--rose);color:var(--rose);padding:7px 14px;border-radius:30px;cursor:pointer;letter-spacing:2px;font-size:.7rem}
 @media(max-width:880px){nav .links{display:none;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--velvet);padding:24px;text-align:center}nav .links.open{display:flex}.menu-btn{display:block}nav{padding:14px 20px}}
+/* Hero */
 .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--blush);position:relative;padding:130px 20px 70px;background:radial-gradient(ellipse at 50% 30%,rgba(101,18,35,.72),rgba(40,4,14,.97) 72%),url('https://images.unsplash.com/photo-1519741497674-611481863552?w=1600&q=80') center/cover}
 .hero::before{content:'';position:absolute;inset:22px;border:1px solid rgba(201,155,134,.6);pointer-events:none}
 .hero::after{content:'';position:absolute;inset:30px;border:1px solid rgba(201,155,134,.25);pointer-events:none}
@@ -89,7 +93,7 @@ p.lead{color:#5f3d42;max-width:760px;margin:0 auto;font-size:1.02rem}
 .venue-card p{font-size:.95rem;color:#5f3d42}
 ul.lux{list-style:none;margin-top:14px;font-size:.9rem}
 ul.lux li{padding:8px 0 8px 28px;position:relative;border-top:1px dashed #e9cdbd}
-ul.lux li::before{content:'?';position:absolute;left:0;color:var(--rose-deep)}
+ul.lux li::before{content:'‚ú¶';position:absolute;left:0;color:var(--rose-deep)}
 .entourage{background:radial-gradient(ellipse at center,#651223 0%,#28040e 75%);color:#f6e8dc;position:relative}
 .entourage::before{content:'';position:absolute;inset:22px;border:1px solid rgba(201,155,134,.35);pointer-events:none}
 .entourage h2.title{color:#fff5eb}
@@ -116,7 +120,7 @@ ul.lux li::before{content:'?';position:absolute;left:0;color:var(--rose-deep)}
 .p-box h4{font-size:1.55rem;color:var(--burgundy);margin-bottom:8px}
 .p-box p{font-size:.94rem;color:#5f3d42}
 form.rsvp-form{max-width:660px;margin:34px auto 0;background:#fff;border-radius:20px;padding:44px 38px;text-align:left;box-shadow:var(--shadow);border:1px solid #e9cdbd;position:relative}
-form.rsvp-form::before{content:'J ? K';position:absolute;top:-22px;left:50%;transform:translateX(-50%);background:var(--velvet);color:var(--rose-light);font-family:'Great Vibes',cursive;font-size:1.5rem;padding:6px 28px;border-radius:30px;border:1px solid var(--rose)}
+form.rsvp-form::before{content:'J ‚ô• K';position:absolute;top:-22px;left:50%;transform:translateX(-50%);background:var(--velvet);color:var(--rose-light);font-family:'Great Vibes',cursive;font-size:1.5rem;padding:6px 28px;border-radius:30px;border:1px solid var(--rose)}
 label{font-size:.72rem;letter-spacing:2px;text-transform:uppercase;color:var(--burgundy);font-weight:600}
 input,select,textarea{width:100%;margin:8px 0 20px;padding:14px 16px;border:1px solid #d8b8a6;border-radius:10px;font-family:inherit;font-size:.95rem;background:#fffdf8}
 input:focus,select:focus,textarea:focus{outline:2px solid var(--rose);border-color:var(--rose)}
@@ -129,7 +133,9 @@ footer .script{font-size:3rem;color:var(--rose-light)}
 </style>
 </head>
 <body>
+<!-- Loader overlay -->
 <div id="loader"><div class="mono">J&K</div><p>Opening Invitation</p></div>
+<!-- Navigation -->
 <nav id="nav">
 <div class="logo"><div class="logo-mark">J&K</div><span>Kenryu & Jeg</span></div>
 <button class="menu-btn" onclick="document.querySelector('.links').classList.toggle('open')">MENU</button>
@@ -137,60 +143,64 @@ footer .script{font-size:3rem;color:var(--rose-light)}
 <a href="#home">Home</a><a href="#invitation">Invitation</a><a href="#venue">Venues</a><a href="#entourage">Entourage</a><a href="#details">Details</a><a href="#rsvp">RSVP</a>
 </div>
 </nav>
+<!-- Hero cover -->
 <header class="hero" id="home">
 <div class="hero-inner">
 <div class="crest"><span>J K</span></div>
-<div class="verse">And above all these put on love, which binds everything together in perfect harmony. ó Colossians 3:14</div>
+<div class="verse">And above all these put on love, which binds everything together in perfect harmony. ‚Äî Colossians 3:14</div>
 <div class="top-label">Together with their beloved families</div>
 <h1>Kenryu Aguilar <i>Nulla</i><div class="amp">&</div>Jeg Whistly <i>Gacutan</i></h1>
-<div class="orn">? ? ?</div>
-<p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.15rem;color:#f5e6d6;max-width:660px;margin:0 auto;">Malugod po namin kayong inaanyayahan ó with joyful hearts rooted in faith and family, join us as two hearts, two families, become one in love and forever.</p>
-<div class="hero-date" style="margin-top:18px;"><b>Sunday, January 10, 2027 at 9AM</b><br>Holy Cross Parish Church ï Alcala, Pangasinan</div>
+<div class="orn">‚ù¶ ‚ú¶ ‚ù¶</div>
+<p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.15rem;color:#f5e6d6;max-width:660px;margin:0 auto;">Malugod po namin kayong inaanyayahan ‚Äî with joyful hearts rooted in faith and family, join us as two hearts, two families, become one in love and forever.</p>
+<div class="hero-date" style="margin-top:18px;"><b>Sunday, January 10, 2027 at 9AM</b><br>Holy Cross Parish Church ‚Ä¢ Alcala, Pangasinan</div>
 <br>
 <a class="btn" href="#invitation">View Invitation</a>
 <a class="btn btn-ghost" href="#rsvp">Reserve Your Seat</a>
 </div>
 </header>
-<div class="ribbon">Pag-ibig &nbsp; ï &nbsp; Pamilya &nbsp; ï &nbsp; Pananampalataya &nbsp; ï &nbsp; 01 . 10 . 2027 &nbsp; ï &nbsp; #JegMeetsKenryuForever</div>
+<div class="ribbon">Pag-ibig &nbsp; ‚Ä¢ &nbsp; Pamilya &nbsp; ‚Ä¢ &nbsp; Pananampalataya &nbsp; ‚Ä¢ &nbsp; 01 . 10 . 2027 &nbsp; ‚Ä¢ &nbsp; #JegMeetsKenryuForever</div>
+<!-- Formal Filipino invitation -->
 <section id="invitation" style="background:radial-gradient(circle at top,#fffdf8,#fdf8f2)">
 <div class="wrap reveal">
 <div class="script-sub">Paanyaya</div>
 <div class="eyebrow">A Traditional Filipino Invitation</div>
 <h2 class="title">With the Blessing of God <br>and Their Parents</h2>
-<div class="gold-divider">?</div>
+<div class="gold-divider">‚ù¶</div>
 <p class="lead">Sa basbas ng Diyos at ng kanilang mga magulang, kayo po ay malugod na inaanyayahan sa banal na pag-iisang dibdib ng kanilang mga anak.</p>
 <div class="parchment">
 <p style="letter-spacing:3px;text-transform:uppercase;font-size:.72rem;color:var(--rose-deep)">Mrs. Emelda Aguilar Nulla</p>
 <p style="font-size:.85rem;font-style:italic">together with</p>
 <p style="letter-spacing:3px;text-transform:uppercase;font-size:.72rem;color:var(--rose-deep)">Mr. Francisco Spirito Gacutan Jr and Mrs. Judy Ferrer Gacutan</p>
-<div class="gold-divider">?</div>
+<div class="gold-divider">‚ú¶</div>
 <p style="letter-spacing:3px;text-transform:uppercase;font-size:.75rem">request the honour of your presence at the marriage of their children</p>
 <div class="couple-names">Kenryu Aguilar <em>&</em> Jeg Whistly</div>
 <p style="font-family:'Cormorant Garamond',serif;font-size:1.25rem;color:var(--burgundy);line-height:1.6">Sunday, the Tenth of January, Two Thousand Twenty-Seven<br>at nine o'clock in the morning<br><strong>Holy Cross Parish Church, Alcala, Pangasinan, Philippines</strong><br><span style="font-size:.95rem;">RGVC+XFG, Alcala, Pangasinan</span></p>
+<!-- Countdown to 9AM ceremony -->
 <div class="countdown" id="countdown">
 <div class="cd"><strong id="d">0</strong><span>Days</span></div>
 <div class="cd"><strong id="h">0</strong><span>Hours</span></div>
 <div class="cd"><strong id="m">0</strong><span>Minutes</span></div>
 <div class="cd"><strong id="s">0</strong><span>Seconds</span></div>
 </div>
-<p style="margin-top:18px;font-size:.82rem;font-style:italic;color:#8a6a6e">Holy Mass, Candle, Veil and Cord Rites to follow ï Kindly be seated before 9AM</p>
+<p style="margin-top:18px;font-size:.82rem;font-style:italic;color:#8a6a6e">Holy Mass, Candle, Veil and Cord Rites to follow ‚Ä¢ Kindly be seated before 9AM</p>
 </div>
 </div>
 </section>
+<!-- Ceremony and reception -->
 <section class="venues" id="venue">
 <div class="wrap reveal">
 <div class="script-sub">Where and When</div>
 <div class="eyebrow">Ceremony and Reception</div>
 <h2 class="title">Seremonya at Resepsyon</h2>
-<div class="gold-divider">?</div>
+<div class="gold-divider">‚ù¶</div>
 <div class="grid2">
 <div class="venue-card">
-<div class="img" style="background-image:url('https://images.unsplash.com/photo-1438032005730-c779502df39b?w=800&q=80')"><span>9:00 AM ï Ceremony ï Kasal</span></div>
-<div class="body"><h3>Holy Cross Parish Church</h3><p>RGVC+XFG, Alcala, Pangasinan, Philippines. Solemn Nuptial Mass begins promptly at 9AM. Kindly arrive early for seating.</p><ul class="lux"><li>Nuptial Mass with Candle, Veil and Cord</li><li>Unplugged ceremony ó please keep phones away</li><li>Formal attire required</li></ul></div>
+<div class="img" style="background-image:url('https://images.unsplash.com/photo-1438032005730-c779502df39b?w=800&q=80')"><span>9:00 AM ‚Ä¢ Ceremony ‚Ä¢ Kasal</span></div>
+<div class="body"><h3>Holy Cross Parish Church</h3><p>RGVC+XFG, Alcala, Pangasinan, Philippines. Solemn Nuptial Mass begins promptly at 9AM. Kindly arrive early for seating.</p><ul class="lux"><li>Nuptial Mass with Candle, Veil and Cord</li><li>Unplugged ceremony ‚Äî please keep phones away</li><li>Formal attire required</li></ul></div>
 </div>
 <div class="venue-card">
-<div class="img" style="background-image:url('https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=800&q=80')"><span>Cocktails 3PM ï Dinner 7PM ï Reception</span></div>
-<div class="body"><h3>ISLA STO. THOMAS RESORT</h3><p>VH7H+6XW Brgy, Santo Domingo, Santo Tomas, Pangasinan, Philippines. Celebration continues with cocktails at 3PM and dinner at 7PM.</p><ul class="lux"><li>Cocktails: 3PM ï Dinner: 7PM</li><li>Resort celebration under the stars</li><li>Evening program: to be announced</li></ul></div>
+<div class="img" style="background-image:url('https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=800&q=80')"><span>Cocktails 3PM ‚Ä¢ Dinner 7PM ‚Ä¢ Reception</span></div>
+<div class="body"><h3>ISLA STO. THOMAS RESORT</h3><p>VH7H+6XW Brgy, Santo Domingo, Santo Tomas, Pangasinan, Philippines. Celebration continues with cocktails at 3PM and dinner at 7PM.</p><ul class="lux"><li>Cocktails: 3PM ‚Ä¢ Dinner: 7PM</li><li>Resort celebration under the stars</li><li>Evening program: to be announced</li></ul></div>
 </div>
 </div>
 <div class="qr-grid">
@@ -198,23 +208,24 @@ footer .script{font-size:3rem;color:var(--rose-light)}
 <span class="badge">Scan to Navigate - Church</span>
 <h4 style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--burgundy)">Holy Cross Parish Church</h4>
 <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&color=4a0a18&data=https%3A%2F%2Fwww.google.com%2Fmaps%2Fplace%2FHoly%2BCross%2BParish%2BChurch%2BRoman%2BCatholic%2F%4015.8449344%2C120.5212078%2C17z" alt="QR Code Church" />
-<br><a href="https://www.google.com/maps/place/Holy+Cross+Parish+Church+-+Roman+Catholic/@15.8449344,120.5212078,17z/data=!3m1!4b1!4m6!3m5!1s0x3391480724cec77d:0x1fc4e10a3b0796e5!8m2!3d15.8449344!4d120.5212078!16s%2Fg%2F1tf77mk6?entry=ttu&g_ep=EgoyMDI2MTEwNC4wIKXMDSoASAFQAw%3D%3D" target="_blank">Open in Google Maps ?</a>
+<br><a href="https://www.google.com/maps/place/Holy+Cross+Parish+Church+-+Roman+Catholic/@15.8449344,120.5212078,17z/data=!3m1!4b1!4m6!3m5!1s0x3391480724cec77d:0x1fc4e10a3b0796e5!8m2!3d15.8449344!4d120.5212078!16s%2Fg%2F1tf77mk6?entry=ttu&g_ep=EgoyMDI2MTEwNC4wIKXMDSoASAFQAw%3D%3D" target="_blank">Open in Google Maps ‚Üí</a>
 </div>
 <div class="qr-card">
 <span class="badge">Scan to Navigate - Venue</span>
 <h4 style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--burgundy)">ISLA STO. THOMAS RESORT</h4>
 <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&color=4a0a18&data=https%3A%2F%2Fwww.google.com%2Fmaps%2Fplace%2FISLA%2BSTO.%2BTHOMAS%2BRESORT%2F%4015.863109%2C120.5773716%2C17z" alt="QR Code Venue" />
-<br><a href="https://www.google.com/maps/place/ISLA+STO.+THOMAS+RESORT/@15.863109,120.5773716,17z/data=!3m1!4b1!4m6!3m5!1s0x339139a2712986dd:0x46cf5a82f3ca1414!8m2!3d15.8631039!4d120.5799465!16s%2Fg%2F11kj44bxv0?entry=ttu&g_ep=EgoyMDI2MTEwNC4wIKXMDSoASAFQAw%3D%3D" target="_blank">Open in Google Maps ?</a>
+<br><a href="https://www.google.com/maps/place/ISLA+STO.+THOMAS+RESORT/@15.863109,120.5773716,17z/data=!3m1!4b1!4m6!3m5!1s0x339139a2712986dd:0x46cf5a82f3ca1414!8m2!3d15.8631039!4d120.5799465!16s%2Fg%2F11kj44bxv0?entry=ttu&g_ep=EgoyMDI2MTEwNC4wIKXMDSoASAFQAw%3D%3D" target="_blank">Open in Google Maps ‚Üí</a>
 </div>
 </div>
 </div>
 </section>
+<!-- Entourage with updated lists -->
 <section class="entourage" id="entourage">
 <div class="wrap reveal">
 <div class="script-sub" style="color:var(--rose-light)">Our Honoured Party</div>
-<div class="eyebrow" style="color:var(--rose)">Abay ï Ninong at Ninang</div>
+<div class="eyebrow" style="color:var(--rose)">Abay ‚Ä¢ Ninong at Ninang</div>
 <h2 class="title">Wedding Entourage</h2>
-<div class="gold-divider" style="color:var(--rose-light)">?</div>
+<div class="gold-divider" style="color:var(--rose-light)">‚ù¶</div>
 <p style="max-width:720px;margin:0 auto;color:#e8c4b5;">With heartfelt gratitude, we present those who will stand with us and guide us in married life.</p>
 <div class="ent-grid">
 <div class="ent-box ninong">
@@ -223,34 +234,37 @@ footer .script{font-size:3rem;color:var(--rose-light)}
 </div>
 <div class="ent-box"><h4>Best Man</h4><ul><li><strong>Franz Joshua Ferrer Gacutan</strong></li></ul><br><h4>Maid of Honor</h4><ul><li><strong>Queen Shiela Mae Aguilar Nulla</strong></li></ul></div>
 <div class="ent-box"><h4>Secondary Sponsors</h4><ul><li><strong>Candle:</strong><br>Jeric Gacutan and Stephanie Villianda</li><li><strong>Veil:</strong><br>Kent Nulla and Mary Knoll Gacutan</li><li><strong>Cord:</strong><br>Marion Javier and Judy Anne Gacutan</li></ul></div>
-<div class="ent-box"><h4>Groomsmen and Bridesmaids</h4><p class="tbd">To be announced with love</p></div>
+<div class="ent-box"><h4>Groomsmen</h4><ul><li><strong>Emie Ferrer</strong></li><li><strong>Edriel Ferrer</strong></li><li><strong>Floyd Carino</strong></li><li><strong>Ian Noces</strong></li><li><strong>EJ Costales</strong></li><li><span class="tbd">To be announced</span></li></ul></div>
+<div class="ent-box"><h4>Bridesmaids</h4><ul><li><strong>Kim Cabael Terrado</strong></li><li><strong>Gleana Cammelle Comcom</strong></li><li><strong>Myca Mendoza</strong></li><li><strong>Maria Gloria Faye Aguilar</strong></li><li><strong>Bridgette Nebriaga</strong></li><li><strong>April Mae Costales</strong></li></ul></div>
 <div class="ent-box"><h4>Flower Girls</h4><ul><li><strong>Keistly Jeiryne Gacutan</strong></li><li><strong>Maria Franzia Gacutan</strong></li><li><strong>Mari Jydelle Javier</strong></li><li><strong>Dhalia Aguilar</strong></li></ul></div>
 <div class="ent-box"><h4>Ring, Bible and Coins</h4><ul><li><strong>Ring Bearer:</strong> Marcus Franz Gacutan</li><li><strong>Bible Bearer:</strong> Ezekiel Costales</li><li><strong>Coin Bearer:</strong> Rowan Macaraeg</li></ul></div>
 <div class="ent-box"><h4>Readers and Alay</h4><p class="tbd">To be announced</p></div>
 </div>
 </div>
 </section>
+<!-- Guest reminders -->
 <section id="details">
 <div class="wrap reveal">
 <div class="script-sub">Good to Know</div>
 <div class="eyebrow">Etiquette and Essentials</div>
 <h2 class="title">Mga Paalala Para sa Panauhin</h2>
-<div class="gold-divider">?</div>
+<div class="gold-divider">‚ù¶</div>
 <div class="practical-grid">
-<div class="p-box"><span class="badge">Dress Code / Motif</span><h4>Formal Burgundy and Champagne</h4><p>Gentlemen in Barong Tagalog or suit. Ladies in floor-length gown or modern Filipiniana.</p><ul class="lux"><li>Kindly avoid white, burgundy and champagne</li><li>Strictly formal ï No denim or slippers</li></ul></div>
+<div class="p-box"><span class="badge">Dress Code / Motif</span><h4>Formal Burgundy and Champagne</h4><p>Gentlemen in Barong Tagalog or suit. Ladies in floor-length gown or modern Filipiniana.</p><ul class="lux"><li>Kindly avoid white, burgundy and champagne</li><li>Strictly formal ‚Ä¢ No denim or slippers</li></ul></div>
 <div class="p-box"><span class="badge">Gift Note</span><h4>Your Presence is the Greatest Gift</h4><p>Your presence is the greatest gift to us. If you wish to bless us further, a monetary gift would be sincerely appreciated, as we will be returning to Canada after our wedding and may not be able to bring traditional gifts with us. Your generosity will help us as we begin again together. Thank you for the love and support!</p></div>
 <div class="p-box"><span class="badge">Little Ones</span><h4>Children Policy</h4><p>Please keep an eye on your little ones throughout the celebration. During the ceremony, kindly ensure they remain seated and avoid running, shouting, or disturbing the proceedings. We appreciate your cooperation in making our special day comfortable and enjoyable for everyone.</p></div>
-<div class="p-box"><span class="badge">Unplugged Ceremony</span><h4>Be Present With Us</h4><p>We invite you to be fully present. Kindly silence phones and cameras during the Mass ó our photographers will share every beautiful moment after. Please tag <strong>#JegMeetsKenryuForever</strong> at the reception!</p><ul class="lux"><li>Unplugged ó no phones in church</li><li>Arrive early for 9AM Mass</li></ul></div>
+<div class="p-box"><span class="badge">Unplugged Ceremony</span><h4>Be Present With Us</h4><p>We invite you to be fully present. Kindly silence phones and cameras during the Mass ‚Äî our photographers will share every beautiful moment after. Please tag <strong>#JegMeetsKenryuForever</strong> at the reception!</p><ul class="lux"><li>Unplugged ‚Äî no phones in church</li><li>Arrive early for 9AM Mass</li></ul></div>
 </div>
 </div>
 </section>
+<!-- RSVP form -->
 <section id="rsvp" style="background:linear-gradient(180deg,#fdf8f2,#fbeeea)">
 <div class="wrap reveal">
 <div class="script-sub">Will You Celebrate With Us?</div>
 <div class="eyebrow">Repondez S'il Vous Plait</div>
-<h2 class="title">RSVP ï Kumpirmahin ang Pagdalo</h2>
-<div class="gold-divider">?</div>
-<p class="lead">Kindly confirm on or before <strong>December 30, 2026</strong>. For inquiries: <strong>gacutankenryu@gmail.com</strong> ï Plus-ones allowed up to max of 2, subject to confirmation.</p>
+<h2 class="title">RSVP ‚Ä¢ Kumpirmahin ang Pagdalo</h2>
+<div class="gold-divider">‚ù¶</div>
+<p class="lead">Kindly confirm on or before <strong>December 30, 2026</strong>. For inquiries: <strong>gacutankenryu@gmail.com</strong> ‚Ä¢ Plus-ones allowed up to max of 2, subject to confirmation.</p>
 <form class="rsvp-form" onsubmit="submitRSVP(event)">
 <label>Full Name</label><input required placeholder="Juan Dela Cruz" />
 <label>Will you attend?</label><select><option>Joyfully Accepts</option><option>Regretfully Declines</option></select>
@@ -258,20 +272,23 @@ footer .script{font-size:3rem;color:var(--rose-light)}
 <label>Email / Contact Number</label><input placeholder="0917-xxx-xxxx" />
 <label>Message for the Couple</label><textarea rows="4" placeholder="Congratulations Kenryu and Jeg!"></textarea>
 <button class="submit" type="submit">Send RSVP with Love</button>
-<div id="rsvpMsg">Salamat! Your RSVP has been received with love. Please also email gacutankenryu@gmail.com to confirm. ?</div>
+<div id="rsvpMsg">Salamat! Your RSVP has been received with love. Please also email gacutankenryu@gmail.com to confirm. ‚ù¶</div>
 </form>
 </div>
 </section>
 <footer>
 <div class="script">Kenryu and Jeg</div>
-<p style="letter-spacing:4px;text-transform:uppercase;font-size:.75rem;margin-top:10px">10 . 01 . 2027 ï Alcala, Pangasinan ï #JegMeetsKenryuForever</p>
-<p style="margin-top:12px;font-size:.8rem;opacity:.7">Mrs. Emelda Aguilar Nulla together with Mr. Francisco Spirito Gacutan Jr and Mrs. Judy Ferrer Gacutan ï Colossians 3:14</p>
+<p style="letter-spacing:4px;text-transform:uppercase;font-size:.75rem;margin-top:10px">10 . 01 . 2027 ‚Ä¢ Alcala, Pangasinan ‚Ä¢ #JegMeetsKenryuForever</p>
+<p style="margin-top:12px;font-size:.8rem;opacity:.7">Mrs. Emelda Aguilar Nulla together with Mr. Francisco Spirito Gacutan Jr and Mrs. Judy Ferrer Gacutan ‚Ä¢ Colossians 3:14</p>
 </footer>
 <script>
+// Hide loader after page load
 window.addEventListener('load',()=>{setTimeout(()=>document.getElementById('loader').classList.add('hide'),800);});
 setTimeout(()=>document.getElementById('loader').classList.add('hide'),3500);
+// Sticky nav style on scroll
 const nav=document.getElementById('nav');
 window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>60);});
+// Countdown to Jan 10, 2027 9AM Philippine time
 const target=new Date('2027-01-10T09:00:00+08:00').getTime();
 function tick(){
 let diff=Math.max(0,target-Date.now());
@@ -281,8 +298,10 @@ document.getElementById('m').textContent=Math.floor(diff%3600000/60000);
 document.getElementById('s').textContent=Math.floor(diff%60000/1000);
 }
 setInterval(tick,1000);tick();
+// Reveal sections on scroll
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.12});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+// Simple static RSVP confirmation (GitHub Pages cannot save data)
 function submitRSVP(e){
 e.preventDefault();
 const m=document.getElementById('rsvpMsg');
