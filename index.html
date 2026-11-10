@@ -115,10 +115,10 @@ ul.lux li::before{content:'✦';position:absolute;left:0;color:var(--rose-deep)}
 .badge{display:inline-block;background:var(--velvet);color:var(--rose-light);font-size:.65rem;letter-spacing:3px;text-transform:uppercase;padding:7px 16px;border-radius:30px;margin-bottom:14px;border:1px solid var(--rose)}
 .p-box h4{font-size:1.55rem;color:var(--burgundy);margin-bottom:8px}
 .p-box p{font-size:.94rem;color:#5f3d42}
-/* Dress code illustration - cropped */
-.attire-wrap{margin:18px 0 10px;background:#fdf8f2;border:1px solid #e9cdbd;border-radius:12px;overflow:hidden}
-.attire-wrap img{width:100%;height:360px;object-fit:cover;object-position:50% 5%;display:block;background:#fff}
+.attire-wrap{margin:18px 0 10px;background:#fff;border:1px solid #e9cdbd;border-radius:12px;overflow:hidden}
+.attire-wrap img{width:100%;height:380px;object-fit:cover;object-position:50% 8%;display:block;background:#fff}
 .attire-wrap figcaption{padding:14px 12px 16px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;color:var(--burgundy);text-align:center;line-height:1.5;border-top:1px solid #e9cdbd}
+#attireFallback,#motifFallback{display:none;padding:30px 20px;text-align:center;font-size:.85rem;color:#8a6a6e}
 form.rsvp-form{max-width:660px;margin:34px auto 0;background:#fff;border-radius:20px;padding:44px 38px;text-align:left;box-shadow:var(--shadow);border:1px solid #e9cdbd;position:relative}
 form.rsvp-form::before{content:'J ♥ K';position:absolute;top:-22px;left:50%;transform:translateX(-50%);background:var(--velvet);color:var(--rose-light);font-family:'Great Vibes',cursive;font-size:1.5rem;padding:6px 28px;border-radius:30px;border:1px solid var(--rose)}
 label{font-size:.72rem;letter-spacing:2px;text-transform:uppercase;color:var(--burgundy);font-weight:600}
@@ -242,18 +242,21 @@ footer .script{font-size:3rem;color:var(--rose-light)}
 <h2 class="title">Mga Paalala Para sa Panauhin</h2>
 <div class="gold-divider">❦</div>
 <div class="practical-grid">
-<div class="p-box"><span class="badge">Dress Code / Motif</span><h4>Formal Burgundy and Champagne</h4><p>Gentlemen in Barong Tagalog or suit. Ladies in floor-length gown or modern Filipiniana.</p>
-<!-- Cropped traditional attire illustration: upload philippines-attire.png beside index.html -->
+<div class="p-box"><span class="badge">Dress Code / Motif</span><h4>Modern Classic</h4><p>Gentlemen in Barong Tagalog. Ladies in modern Filipiniana.</p>
 <div class="attire-wrap">
-<figure>
-<img src="philippines-attire.png" alt="Traditional Barong Tagalog and Filipiniana" />
+<img id="attireImg" src="./philippines-attire.png" alt="Traditional Barong Tagalog and Filipiniana" onerror="attireError()" />
+<div id="attireFallback">Upload your file as <b>philippines-attire.png</b> next to index.html to show the Barong & Filipiniana illustration here.</div>
 <figcaption>Traditional Barong Tagalog & Filipiniana<br><span style="font-family:Montserrat,sans-serif;font-size:.7rem;letter-spacing:2px;">GENTLEMEN IN BARONG • LADIES IN FILIPINIANA</span></figcaption>
-</figure>
+</div>
+<div class="attire-wrap">
+<img id="motifImg" src="./motif-flowers.png" alt="Modern Classic Motif Inspiration" style="height:300px;object-position:center;" onerror="motifError()" />
+<div id="motifFallback">Upload your file as <b>motif-flowers.png</b> next to index.html to show the motif inspiration here.</div>
+<figcaption>Modern Classic Motif Inspiration<br><span style="font-family:Montserrat,sans-serif;font-size:.7rem;letter-spacing:2px;">FRESH • TIMELESS • ELEGANT</span></figcaption>
 </div>
 <ul class="lux"><li>Strictly formal • No denim or slippers</li></ul></div>
 <div class="p-box"><span class="badge">Gift Note</span><h4>Your Presence is the Greatest Gift</h4><p>Your presence is the greatest gift to us. If you wish to bless us further, a monetary gift would be sincerely appreciated, as we will be returning to Canada after our wedding and may not be able to bring traditional gifts with us. Your generosity will help us as we begin again together. Thank you for the love and support!</p></div>
 <div class="p-box"><span class="badge">Little Ones</span><h4>Children Policy</h4><p>Please keep an eye on your little ones throughout the celebration. During the ceremony, kindly ensure they remain seated and avoid running, shouting, or disturbing the proceedings. We appreciate your cooperation in making our special day comfortable and enjoyable for everyone.</p></div>
-<div class="p-box"><span class="badge">Unplugged Ceremony</span><h4>Be Present With Us</h4><p>We invite you to be fully present. Kindly silence phones and cameras during the Mass — our photographers will share every beautiful moment after. Please tag <strong>#JegMeetsKenryuForever</strong> at the reception!</p><ul class="lux"><li>Unplugged — no phones in church</li><li>Arrive early for 9AM Mass</li></ul></div>
+<div class="p-box"><span class="badge">Photos & Devices</span><h4>Devices Friendly Celebration</h4><p>Feel free to capture our special moments! Kindly keep your phones on silent during the Mass and avoid walking across the aisle to take photos. Please tag <strong>#JegMeetsKenryuForever</strong> so we can relive the day through your eyes!</p><ul class="lux"><li>Devices friendly — photos allowed</li><li>Arrive early for 9AM Mass</li></ul></div>
 </div>
 </div>
 </section>
@@ -301,6 +304,20 @@ e.preventDefault();
 const m=document.getElementById('rsvpMsg');
 m.style.display='block';e.target.reset();
 m.scrollIntoView({behavior:'smooth',block:'center'});
+}
+function attireError(){
+var img=document.getElementById('attireImg');
+if(!img.dataset.tried1){img.dataset.tried1='1';img.src='./philippines-attire.png.jpg';return;}
+if(!img.dataset.tried2){img.dataset.tried2='1';img.src='./philippines-attire.jpg';return;}
+img.style.display='none';
+document.getElementById('attireFallback').style.display='block';
+}
+function motifError(){
+var img=document.getElementById('motifImg');
+if(!img.dataset.tried1){img.dataset.tried1='1';img.src='./motif-flowers.jpg';return;}
+if(!img.dataset.tried2){img.dataset.tried2='1';img.src='./motif-flowers.jpeg';return;}
+img.style.display='none';
+document.getElementById('motifFallback').style.display='block';
 }
 </script>
 </body>
