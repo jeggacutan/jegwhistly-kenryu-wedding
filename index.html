@@ -20,21 +20,23 @@ h1,h2,h3{font-family:'Cormorant Garamond',serif;font-weight:600}
 .script{font-family:'Great Vibes',cursive}
 #loader{position:fixed;inset:0;background:var(--velvet);z-index:9999;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:16px;transition:opacity .8s,visibility .8s}
 #loader.hide{opacity:0;visibility:hidden}
-#loader .mono{width:112px;height:112px;border:1px solid var(--rose);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Great Vibes',cursive;font-size:2.6rem;color:var(--rose-light);position:relative}
+#loader .mono{width:116px;height:116px;border:1px solid var(--rose);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1.7rem;letter-spacing:2px;color:var(--rose-light);position:relative}
 #loader .mono::after{content:'';position:absolute;inset:8px;border:1px solid rgba(201,155,134,.4);border-radius:50%}
 #loader p{color:var(--rose-light);letter-spacing:5px;font-size:.7rem;text-transform:uppercase;animation:pulse 1.5s infinite}
 @keyframes pulse{0%,100%{opacity:.5}50%{opacity:1}}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:18px 42px;transition:.4s;background:linear-gradient(to bottom,rgba(40,4,14,.85),transparent)}
-nav.scrolled{background:rgba(40,4,14,.96);backdrop-filter:blur(12px);padding:12px 42px;border-bottom:1px solid rgba(201,155,134,.35)}
-nav .logo{display:flex;align-items:center;gap:12px;color:var(--blush)}
-nav .logo-mark{width:42px;height:42px;border:1px solid var(--rose);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Great Vibes',cursive;font-size:1.3rem;color:var(--rose-light)}
-nav .logo span{font-family:'Cormorant Garamond',serif;letter-spacing:3px;font-size:.85rem;text-transform:uppercase}
-nav .links{display:flex;gap:26px}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:14px 36px;transition:.4s;background:linear-gradient(to bottom,rgba(40,4,14,.85),transparent)}
+nav.scrolled{background:rgba(40,4,14,.96);backdrop-filter:blur(12px);padding:10px 36px;border-bottom:1px solid rgba(201,155,134,.35)}
+nav .logo{display:flex;align-items:center;gap:12px;color:var(--blush);text-decoration:none}
+nav .logo-mark{width:48px;height:48px;min-width:48px;border:1px solid var(--rose);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:.95rem;letter-spacing:1px;color:var(--rose-light);background:rgba(255,255,255,.06);line-height:1;white-space:nowrap}
+nav .logo-text{display:flex;flex-direction:column;line-height:1.2}
+nav .logo-text span:first-child{font-family:'Cormorant Garamond',serif;letter-spacing:3px;font-size:.85rem;text-transform:uppercase;color:#fff}
+nav .logo-text small{font-size:.62rem;letter-spacing:3px;text-transform:uppercase;color:#e8c4b5;opacity:.85}
+nav .links{display:flex;gap:26px;align-items:center}
 nav a{color:#f3dcc9;text-decoration:none;font-size:.7rem;letter-spacing:2.5px;text-transform:uppercase;position:relative}
 nav a::after{content:'';position:absolute;left:0;bottom:-6px;width:0;height:1px;background:var(--rose);transition:.3s}
 nav a:hover::after{width:100%}
 .menu-btn{display:none;background:none;border:1px solid var(--rose);color:var(--rose);padding:7px 14px;border-radius:30px;cursor:pointer;letter-spacing:2px;font-size:.7rem}
-@media(max-width:880px){nav .links{display:none;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--velvet);padding:24px;text-align:center}nav .links.open{display:flex}.menu-btn{display:block}nav{padding:14px 20px}}
+@media(max-width:880px){nav .links{display:none;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--velvet);padding:24px;text-align:center}nav .links.open{display:flex}.menu-btn{display:block}nav{padding:12px 18px}}
 .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--blush);position:relative;padding:130px 20px 70px;background:radial-gradient(ellipse at 50% 30%,rgba(101,18,35,.72),rgba(40,4,14,.97) 72%),url('https://images.unsplash.com/photo-1519741497674-611481863552?w=1600&q=80') center/cover}
 .hero::before{content:'';position:absolute;inset:22px;border:1px solid rgba(201,155,134,.6);pointer-events:none}
 .hero::after{content:'';position:absolute;inset:30px;border:1px solid rgba(201,155,134,.25);pointer-events:none}
@@ -42,7 +44,7 @@ nav a:hover::after{width:100%}
 @keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
 .crest{width:96px;height:96px;margin:0 auto 18px;border:1px solid var(--rose);border-radius:50%;display:flex;align-items:center;justify-content:center;position:relative;background:rgba(255,255,255,.07)}
 .crest::before{content:'';position:absolute;inset:7px;border:1px solid rgba(243,220,201,.5);border-radius:50%}
-.crest span{font-family:'Great Vibes',cursive;font-size:2.1rem;color:var(--rose-light)}
+.crest span{font-family:'Cormorant Garamond',serif;font-size:1.35rem;letter-spacing:2px;color:var(--rose-light)}
 .hero .verse{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--rose-light);max-width:600px;margin:0 auto}
 .hero .top-label{letter-spacing:6px;font-size:.7rem;text-transform:uppercase;color:#e8c4b5;margin:26px 0 12px}
 .hero h1{font-size:clamp(2.6rem,7vw,5.2rem);line-height:1;font-weight:500;color:#fffdf8}
@@ -97,7 +99,7 @@ ul.lux li::before{content:'✦';position:absolute;left:0;color:var(--rose-deep)}
 @media(max-width:820px){.ent-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){.ent-grid{grid-template-columns:1fr}}
 .ent-box{background:linear-gradient(180deg,rgba(255,255,255,.09),rgba(255,255,255,.02));border:1px solid rgba(201,155,134,.55);border-radius:14px;padding:32px 22px;backdrop-filter:blur(6px)}
-.ent-box h4{font-family:'Great Vibes',cursive;font-size:1.9rem;color:#ffffff;margin-bottom:10px;font-weight:400;text-shadow:0 2px 12px rgba(0,0,0,.4)}
+.ent-box h4{font-family:'Cormorant Garamond',serif;font-size:1.25rem;letter-spacing:2px;text-transform:uppercase;color:#ffffff;margin-bottom:10px;font-weight:600}
 .ent-box ul{list-style:none;font-family:'Cormorant Garamond',serif;font-size:1.18rem;font-style:italic;line-height:2.05;color:#f3dcc9;font-weight:400}
 .ent-box li strong{color:#f3dcc9;font-weight:400;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.18rem}
 .ent-box .tbd{font-style:italic;font-family:'Cormorant Garamond',serif;font-size:1.18rem;color:#f3dcc9;opacity:1;font-weight:400}
@@ -133,9 +135,9 @@ footer .script{font-size:3rem;color:var(--rose-light)}
 </style>
 </head>
 <body>
-<div id="loader"><div class="mono">J&K</div><p>Opening Invitation</p></div>
+<div id="loader"><div class="mono">J & K</div><p>Opening Invitation</p></div>
 <nav id="nav">
-<div class="logo"><div class="logo-mark">J&K</div><span>Kenryu & Jeg</span></div>
+<a class="logo" href="#home"><div class="logo-mark">J & K</div><div class="logo-text"><span>Kenryu & Jeg</span><small>10 . 01 . 2027</small></div></a>
 <button class="menu-btn" onclick="document.querySelector('.links').classList.toggle('open')">MENU</button>
 <div class="links">
 <a href="#home">Home</a><a href="#invitation">Invitation</a><a href="#venue">Venues</a><a href="#entourage">Entourage</a><a href="#details">Details</a><a href="#rsvp">RSVP</a>
@@ -143,7 +145,7 @@ footer .script{font-size:3rem;color:var(--rose-light)}
 </nav>
 <header class="hero" id="home">
 <div class="hero-inner">
-<div class="crest"><span>J K</span></div>
+<div class="crest"><span>J & K</span></div>
 <div class="verse">And above all these put on love, which binds everything together in perfect harmony. — Colossians 3:14</div>
 <div class="top-label">Together with their beloved families</div>
 <h1>Kenryu Aguilar <i>Nulla</i><div class="amp">&</div>Jeg Whistly <i>Gacutan</i></h1>
