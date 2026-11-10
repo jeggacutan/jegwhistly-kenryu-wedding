@@ -97,7 +97,7 @@ ul.lux li::before{content:'✦';position:absolute;left:0;color:var(--rose-deep)}
 @media(max-width:820px){.ent-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){.ent-grid{grid-template-columns:1fr}}
 .ent-box{background:linear-gradient(180deg,rgba(255,255,255,.09),rgba(255,255,255,.02));border:1px solid rgba(201,155,134,.55);border-radius:14px;padding:32px 22px;backdrop-filter:blur(6px)}
-.ent-box h4{font-family:'Great Vibes',cursive;font-size:1.8rem;color:var(--rose-light);margin-bottom:10px;font-weight:400}
+.ent-box h4{font-family:'Great Vibes',cursive;font-size:1.9rem;color:#ffffff;margin-bottom:10px;font-weight:400;text-shadow:0 2px 12px rgba(0,0,0,.4)}
 .ent-box ul{list-style:none;font-family:'Cormorant Garamond',serif;font-size:1.18rem;font-style:italic;line-height:2.05;color:#f3dcc9;font-weight:400}
 .ent-box li strong{color:#f3dcc9;font-weight:400;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.18rem}
 .ent-box .tbd{font-style:italic;font-family:'Cormorant Garamond',serif;font-size:1.18rem;color:#f3dcc9;opacity:1;font-weight:400}
@@ -115,10 +115,10 @@ ul.lux li::before{content:'✦';position:absolute;left:0;color:var(--rose-deep)}
 .badge{display:inline-block;background:var(--velvet);color:var(--rose-light);font-size:.65rem;letter-spacing:3px;text-transform:uppercase;padding:7px 16px;border-radius:30px;margin-bottom:14px;border:1px solid var(--rose)}
 .p-box h4{font-size:1.55rem;color:var(--burgundy);margin-bottom:8px}
 .p-box p{font-size:.94rem;color:#5f3d42}
-.dress-photos{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0 8px}
-.dress-photos figure{background:#fdf8f2;border:1px solid #e9cdbd;border-radius:12px;overflow:hidden}
-.dress-photos img{width:100%;height:220px;object-fit:cover;display:block}
-.dress-photos figcaption{padding:10px 12px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1rem;color:var(--burgundy);text-align:center;line-height:1.4}
+/* Dress code illustration - cropped */
+.attire-wrap{margin:18px 0 10px;background:#fdf8f2;border:1px solid #e9cdbd;border-radius:12px;overflow:hidden}
+.attire-wrap img{width:100%;height:360px;object-fit:cover;object-position:50% 5%;display:block;background:#fff}
+.attire-wrap figcaption{padding:14px 12px 16px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;color:var(--burgundy);text-align:center;line-height:1.5;border-top:1px solid #e9cdbd}
 form.rsvp-form{max-width:660px;margin:34px auto 0;background:#fff;border-radius:20px;padding:44px 38px;text-align:left;box-shadow:var(--shadow);border:1px solid #e9cdbd;position:relative}
 form.rsvp-form::before{content:'J ♥ K';position:absolute;top:-22px;left:50%;transform:translateX(-50%);background:var(--velvet);color:var(--rose-light);font-family:'Great Vibes',cursive;font-size:1.5rem;padding:6px 28px;border-radius:30px;border:1px solid var(--rose)}
 label{font-size:.72rem;letter-spacing:2px;text-transform:uppercase;color:var(--burgundy);font-weight:600}
@@ -215,10 +215,10 @@ footer .script{font-size:3rem;color:var(--rose-light)}
 </section>
 <section class="entourage" id="entourage">
 <div class="wrap reveal">
-<div class="script-sub" style="color:var(--rose-light)">Our Honoured Party</div>
-<div class="eyebrow" style="color:var(--rose)">Abay • Ninong at Ninang</div>
+<div class="script-sub" style="color:#ffffff">Our Honoured Party</div>
+<div class="eyebrow" style="color:#ffffff">Abay • Ninong at Ninang</div>
 <h2 class="title">Wedding Entourage</h2>
-<div class="gold-divider" style="color:var(--rose-light)">❦</div>
+<div class="gold-divider" style="color:#ffffff">❦</div>
 <p style="max-width:720px;margin:0 auto;color:#e8c4b5;">With heartfelt gratitude, we present those who will stand with us and guide us in married life.</p>
 <div class="ent-grid">
 <div class="ent-box ninong">
@@ -243,9 +243,12 @@ footer .script{font-size:3rem;color:var(--rose-light)}
 <div class="gold-divider">❦</div>
 <div class="practical-grid">
 <div class="p-box"><span class="badge">Dress Code / Motif</span><h4>Formal Burgundy and Champagne</h4><p>Gentlemen in Barong Tagalog or suit. Ladies in floor-length gown or modern Filipiniana.</p>
-<div class="dress-photos">
-<figure><img src="https://images.unsplash.com/photo-1617137968427-85924c800a22?w=600&q=80" alt="Traditional Barong Tagalog for men" /><figcaption>Traditional Barong Tagalog<br><span style="font-family:Montserrat,sans-serif;font-size:.72rem;letter-spacing:1px">GENTLEMEN</span></figcaption></figure>
-<figure><img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=600&q=80" alt="Modern Filipiniana gown for ladies" /><figcaption>Modern Filipiniana Gown<br><span style="font-family:Montserrat,sans-serif;font-size:.72rem;letter-spacing:1px">LADIES</span></figcaption></figure>
+<!-- Cropped traditional attire illustration: upload philippines-attire.png beside index.html -->
+<div class="attire-wrap">
+<figure>
+<img src="philippines-attire.png" alt="Traditional Barong Tagalog and Filipiniana" />
+<figcaption>Traditional Barong Tagalog & Filipiniana<br><span style="font-family:Montserrat,sans-serif;font-size:.7rem;letter-spacing:2px;">GENTLEMEN IN BARONG • LADIES IN FILIPINIANA</span></figcaption>
+</figure>
 </div>
 <ul class="lux"><li>Strictly formal • No denim or slippers</li></ul></div>
 <div class="p-box"><span class="badge">Gift Note</span><h4>Your Presence is the Greatest Gift</h4><p>Your presence is the greatest gift to us. If you wish to bless us further, a monetary gift would be sincerely appreciated, as we will be returning to Canada after our wedding and may not be able to bring traditional gifts with us. Your generosity will help us as we begin again together. Thank you for the love and support!</p></div>
