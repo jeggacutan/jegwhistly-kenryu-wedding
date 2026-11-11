@@ -121,14 +121,9 @@ ul.lux li::before{content:'✦';position:absolute;left:0;color:var(--rose-deep)}
 .attire-wrap img{width:100%;height:380px;object-fit:cover;object-position:50% 8%;display:block;background:#fff}
 .attire-wrap figcaption{padding:14px 12px 16px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;color:var(--burgundy);text-align:center;line-height:1.5;border-top:1px solid #e9cdbd}
 #attireFallback,#motifFallback{display:none;padding:30px 20px;text-align:center;font-size:.85rem;color:#8a6a6e}
-form.rsvp-form{max-width:660px;margin:34px auto 0;background:#fff;border-radius:20px;padding:44px 38px;text-align:left;box-shadow:var(--shadow);border:1px solid #e9cdbd;position:relative}
-form.rsvp-form::before{content:'J ♥ K';position:absolute;top:-22px;left:50%;transform:translateX(-50%);background:var(--velvet);color:var(--rose-light);font-family:'Great Vibes',cursive;font-size:1.5rem;padding:6px 28px;border-radius:30px;border:1px solid var(--rose)}
-label{font-size:.72rem;letter-spacing:2px;text-transform:uppercase;color:var(--burgundy);font-weight:600}
-input,select,textarea{width:100%;margin:8px 0 20px;padding:14px 16px;border:1px solid #d8b8a6;border-radius:10px;font-family:inherit;font-size:.95rem;background:#fffdf8}
-input:focus,select:focus,textarea:focus{outline:2px solid var(--rose);border-color:var(--rose)}
-button.submit{width:100%;background:linear-gradient(90deg,#4a0a18,#651223);color:#f9ece3;border:1px solid var(--rose);padding:17px;border-radius:30px;letter-spacing:3px;text-transform:uppercase;font-weight:600;cursor:pointer;transition:.3s}
-button.submit:hover{filter:brightness(1.2);transform:translateY(-1px)}
-#rsvpMsg{text-align:center;margin-top:16px;color:var(--burgundy2);font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-style:italic;display:none}
+.rsvp-box{max-width:700px;margin:34px auto 0;background:#fff;border-radius:20px;padding:44px 38px;text-align:center;box-shadow:var(--shadow);border:1px solid #e9cdbd;position:relative}
+.rsvp-box::before{content:'J ♥ K';position:absolute;top:-22px;left:50%;transform:translateX(-50%);background:var(--velvet);color:var(--rose-light);font-family:'Great Vibes',cursive;font-size:1.5rem;padding:6px 28px;border-radius:30px;border:1px solid var(--rose)}
+.rsvp-iframe{width:100%;height:980px;border:0;border-radius:12px;background:#fffdf8;margin-top:20px}
 footer{background:var(--velvet);color:#e8c4b5;text-align:center;padding:70px 20px 40px;position:relative}
 footer::before{content:'';position:absolute;top:18px;left:18px;right:18px;bottom:18px;border:1px solid rgba(201,155,134,.3);pointer-events:none}
 footer .script{font-size:3rem;color:var(--rose-light)}
@@ -196,7 +191,7 @@ footer .script{font-size:3rem;color:var(--rose-light)}
 </div>
 <div class="venue-card">
 <div class="img" style="background-image:url('https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=800&q=80')"><span>Cocktails 3PM • Dinner 7PM • Reception</span></div>
-<div class="body"><h3>ISLA STO. THOMAS RESORT</h3><p>Brgy, Santo Domingo, Santo Tomas, Pangasinan, Philippines. Celebration continues with cocktails at 3PM and dinner at 7PM.</p><ul class="lux"><li>Cocktails: 3PM • Dinner: 7PM</li><li>Resort celebration under the stars</li><li>Please follow seating arrangement</li><li>Evening program: to be announced</li></ul></div>
+<div class="body"><h3>ISLA STO. THOMAS RESORT</h3><p>Brgy. Santo Domingo, Santo Tomas, Pangasinan, Philippines. Celebration continues with cocktails at 3PM and dinner at 7PM.</p><ul class="lux"><li>Cocktails: 3PM • Dinner: 7PM</li><li>Resort celebration under the stars</li><li>Please follow seating arrangement</li><li>Evening program: to be announced</li></ul></div>
 </div>
 </div>
 <div class="qr-grid">
@@ -269,15 +264,12 @@ footer .script{font-size:3rem;color:var(--rose-light)}
 <h2 class="title">RSVP • Kumpirmahin ang Pagdalo</h2>
 <div class="gold-divider">❦</div>
 <p class="lead">Kindly confirm on or before <strong>December 30, 2026</strong>. For inquiries: <strong>gacutankenryu@gmail.com</strong> • Plus-ones allowed up to max of 2, subject to confirmation.</p>
-<form class="rsvp-form" onsubmit="submitRSVP(event)">
-<label>Full Name</label><input required placeholder="Juan Dela Cruz" />
-<label>Will you attend?</label><select><option>Joyfully Accepts</option><option>Regretfully Declines</option></select>
-<label>Number of Guests (max 2 including you)</label><select><option>1</option><option>2</option></select>
-<label>Email / Contact Number</label><input placeholder="0917-xxx-xxxx" />
-<label>Message for the Couple</label><textarea rows="4" placeholder="Congratulations Jeg Whistly and Kenryu!"></textarea>
-<button class="submit" type="submit">Send RSVP with Love</button>
-<div id="rsvpMsg">Salamat! Your RSVP has been received with love. Please also email gacutankenryu@gmail.com to confirm. ❦</div>
-</form>
+<div class="rsvp-box">
+<p style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-style:italic;color:var(--burgundy)">Please fill out our official form below — your response saves automatically to our guest list.</p>
+<a class="btn" style="margin-top:16px;" href="https://docs.google.com/forms/d/e/1FAIpQLSf2_--VLPdtW40WY4hrvNdYJMC8F4R4TuoUVi0IzV5-BQanzQ/viewform" target="_blank">Open RSVP Form in New Tab</a>
+<iframe class="rsvp-iframe" src="https://docs.google.com/forms/d/e/1FAIpQLSf2_--VLPdtW40WY4hrvNdYJMC8F4R4TuoUVi0IzV5-BQanzQ/viewform?embedded=true" loading="lazy" title="Wedding RSVP Form">Loading RSVP form…</iframe>
+<p style="margin-top:14px;font-size:.85rem;color:#8a6a6e;">Having trouble? Email us at <strong>gacutankenryu@gmail.com</strong></p>
+</div>
 </div>
 </section>
 <footer>
@@ -301,12 +293,6 @@ document.getElementById('s').textContent=Math.floor(diff%60000/1000);
 setInterval(tick,1000);tick();
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.12});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-function submitRSVP(e){
-e.preventDefault();
-const m=document.getElementById('rsvpMsg');
-m.style.display='block';e.target.reset();
-m.scrollIntoView({behavior:'smooth',block:'center'});
-}
 function attireError(){
 var img=document.getElementById('attireImg');
 if(!img.dataset.tried1){img.dataset.tried1='1';img.src='./philippines-attire.png.jpg';return;}
