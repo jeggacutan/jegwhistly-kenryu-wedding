@@ -1,0 +1,354 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Jeg Whistly & Kenryu | January 10, 2027</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+--burgundy:#4a0a18; --burgundy2:#651223; --velvet:#28040e;
+--rose:#c99b86; --rose-light:#f3dcc9; --rose-deep:#a6725e;
+--blush:#f9ece3; --cream:#fdf8f2; --ivory:#fffdf8;
+--ink:#2e1a1e; --shadow:0 25px 60px rgba(40,4,14,.18);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Montserrat',sans-serif;background:var(--cream);color:var(--ink);line-height:1.8;overflow-x:hidden}
+h1,h2,h3{font-family:'Cormorant Garamond',serif;font-weight:600}
+.script{font-family:'Great Vibes',cursive}
+#loader{position:fixed;inset:0;background:var(--velvet);z-index:9999;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:16px;transition:opacity .8s,visibility .8s}
+#loader.hide{opacity:0;visibility:hidden}
+#loader .mono{width:116px;height:116px;border:1px solid var(--rose);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1.7rem;letter-spacing:2px;color:var(--rose-light);position:relative}
+#loader .mono::after{content:'';position:absolute;inset:8px;border:1px solid rgba(201,155,134,.4);border-radius:50%}
+#loader p{color:var(--rose-light);letter-spacing:5px;font-size:.7rem;text-transform:uppercase;animation:pulse 1.5s infinite}
+@keyframes pulse{0%,100%{opacity:.5}50%{opacity:1}}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:14px 36px;transition:.4s;background:linear-gradient(to bottom,rgba(40,4,14,.85),transparent)}
+nav.scrolled{background:rgba(40,4,14,.96);backdrop-filter:blur(12px);padding:10px 36px;border-bottom:1px solid rgba(201,155,134,.35)}
+nav .logo{display:flex;align-items:center;gap:12px;color:var(--blush);text-decoration:none}
+nav .logo-mark{width:48px;height:48px;min-width:48px;border:1px solid var(--rose);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:.95rem;letter-spacing:1px;color:var(--rose-light);background:rgba(255,255,255,.06);line-height:1;white-space:nowrap}
+nav .logo-text{display:flex;flex-direction:column;line-height:1.2}
+nav .logo-text span:first-child{font-family:'Cormorant Garamond',serif;letter-spacing:3px;font-size:.85rem;text-transform:uppercase;color:#fff}
+nav .logo-text small{font-size:.62rem;letter-spacing:3px;text-transform:uppercase;color:#e8c4b5;opacity:.85}
+nav .links{display:flex;gap:26px;align-items:center}
+nav a{color:#f3dcc9;text-decoration:none;font-size:.7rem;letter-spacing:2.5px;text-transform:uppercase;position:relative}
+nav a::after{content:'';position:absolute;left:0;bottom:-6px;width:0;height:1px;background:var(--rose);transition:.3s}
+nav a:hover::after{width:100%}
+.menu-btn{display:none;background:none;border:1px solid var(--rose);color:var(--rose);padding:7px 14px;border-radius:30px;cursor:pointer;letter-spacing:2px;font-size:.7rem}
+@media(max-width:880px){nav .links{display:none;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--velvet);padding:24px;text-align:center}nav .links.open{display:flex}.menu-btn{display:block}nav{padding:12px 18px}}
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--blush);position:relative;padding:130px 20px 70px;background:radial-gradient(ellipse at 50% 30%,rgba(101,18,35,.72),rgba(40,4,14,.97) 72%),url('https://images.unsplash.com/photo-1519741497674-611481863552?w=1600&q=80') center/cover}
+.hero::before{content:'';position:absolute;inset:22px;border:1px solid rgba(201,155,134,.6);pointer-events:none}
+.hero::after{content:'';position:absolute;inset:30px;border:1px solid rgba(201,155,134,.25);pointer-events:none}
+.hero-inner{max-width:900px;position:relative;z-index:2;animation:fadeUp 1.4s ease}
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+.crest{width:96px;height:96px;margin:0 auto 18px;border:1px solid var(--rose);border-radius:50%;display:flex;align-items:center;justify-content:center;position:relative;background:rgba(255,255,255,.07)}
+.crest::before{content:'';position:absolute;inset:7px;border:1px solid rgba(243,220,201,.5);border-radius:50%}
+.crest span{font-family:'Cormorant Garamond',serif;font-size:1.35rem;letter-spacing:2px;color:var(--rose-light)}
+.hero .verse{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--rose-light);max-width:600px;margin:0 auto}
+.hero .top-label{letter-spacing:6px;font-size:.7rem;text-transform:uppercase;color:#e8c4b5;margin:26px 0 12px}
+.hero h1{font-size:clamp(2.6rem,7vw,5.2rem);line-height:1;font-weight:500;color:#fffdf8}
+.hero h1 i{font-family:'Great Vibes',cursive;font-weight:400;font-size:clamp(2.9rem,8vw,5.6rem);display:block;margin:6px 0;color:var(--rose-light)}
+.hero .amp{font-family:'Great Vibes',cursive;color:var(--rose);font-size:2.8rem;line-height:1;margin:8px 0}
+.orn{display:flex;align-items:center;justify-content:center;gap:14px;margin:22px auto;color:var(--rose)}
+.orn::before,.orn::after{content:'';width:130px;height:1px;background:linear-gradient(90deg,transparent,var(--rose),transparent)}
+.hero-date{letter-spacing:3px;text-transform:uppercase;font-size:.82rem;color:#f5e6d6;line-height:2}
+.hero-date b{color:var(--rose-light)}
+.btn{display:inline-block;margin-top:28px;padding:16px 42px;background:linear-gradient(105deg,#a6725e,#f3dcc9,#a6725e);background-size:200% auto;color:#28040e;text-decoration:none;letter-spacing:3px;text-transform:uppercase;font-size:.75rem;font-weight:600;border-radius:30px;transition:.4s;box-shadow:0 12px 30px rgba(201,155,134,.35)}
+.btn:hover{background-position:right center;transform:translateY(-2px)}
+.btn-ghost{background:transparent;color:var(--rose-light);border:1px solid var(--rose);box-shadow:none;margin-left:12px}
+.btn-ghost:hover{background:rgba(201,155,134,.15);color:#fff}
+.ribbon{background:linear-gradient(90deg,#a6725e,#f3dcc9,#a6725e);color:#28040e;text-align:center;padding:10px;letter-spacing:4px;font-size:.7rem;text-transform:uppercase;font-weight:600}
+section{padding:105px 22px}
+.wrap{max-width:1060px;margin:0 auto;text-align:center}
+.reveal{opacity:0;transform:translateY(36px);transition:all .9s cubic-bezier(.16,1,.3,1)}
+.reveal.visible{opacity:1;transform:none}
+.eyebrow{letter-spacing:5px;text-transform:uppercase;font-size:.7rem;color:var(--rose-deep);margin-bottom:10px;font-weight:600}
+h2.title{font-size:clamp(2.2rem,5vw,3.5rem);color:var(--burgundy);line-height:1.05}
+.script-sub{font-family:'Great Vibes',cursive;font-size:2.6rem;color:#b67e68;margin-bottom:2px}
+.gold-divider{display:flex;align-items:center;justify-content:center;gap:12px;margin:22px auto;color:var(--rose)}
+.gold-divider::before,.gold-divider::after{content:'';width:90px;height:1px;background:linear-gradient(90deg,transparent,var(--rose))}
+.gold-divider::after{background:linear-gradient(90deg,var(--rose),transparent)}
+p.lead{color:#5f3d42;max-width:760px;margin:0 auto;font-size:1.02rem}
+.parchment{margin-top:44px;background:#fffdf8;border:1px solid #e9cdbd;border-radius:4px;padding:60px 38px;position:relative;box-shadow:var(--shadow)}
+.parchment::before{content:'';position:absolute;inset:12px;border:1px solid rgba(166,114,94,.35);pointer-events:none}
+.couple-names{margin:26px 0 10px;font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,5.5vw,3.5rem);color:var(--velvet);line-height:1.1}
+.couple-names em{font-family:'Great Vibes',cursive;color:var(--burgundy2);font-size:1.15em;padding:0 8px}
+.countdown{display:flex;justify-content:center;gap:16px;margin:32px auto 0;flex-wrap:wrap}
+.cd{background:linear-gradient(180deg,#4a0a18,#28040e);border:1px solid var(--rose);border-radius:12px;padding:20px 10px;min-width:118px;color:var(--blush);box-shadow:0 15px 30px rgba(40,4,14,.25);position:relative}
+.cd::after{content:'';position:absolute;inset:6px;border:1px solid rgba(201,155,134,.3);border-radius:8px}
+.cd strong{display:block;font-family:'Cormorant Garamond',serif;font-size:2.3rem;color:var(--rose-light)}
+.cd span{font-size:.65rem;letter-spacing:3px;text-transform:uppercase;color:#e8c4b5}
+.venues{background:linear-gradient(180deg,#fbeeea,#fdf8f2)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:44px;text-align:left}
+@media(max-width:780px){.grid2{grid-template-columns:1fr}}
+.venue-card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:var(--shadow);border:1px solid rgba(201,155,134,.4)}
+.venue-card .img{height:250px;background-size:cover;background-position:center;position:relative}
+.venue-card .img::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(40,4,14,.78),transparent)}
+.venue-card .img span{position:absolute;bottom:16px;left:26px;z-index:2;color:var(--rose-light);letter-spacing:2px;text-transform:uppercase;font-size:.72rem;font-weight:600}
+.venue-card .body{padding:30px 30px 32px;border-top:3px solid var(--rose)}
+.venue-card h3{font-size:1.9rem;color:var(--burgundy);margin:4px 0 8px}
+.venue-card p{font-size:.95rem;color:#5f3d42}
+ul.lux{list-style:none;margin-top:14px;font-size:.9rem}
+ul.lux li{padding:8px 0 8px 28px;position:relative;border-top:1px dashed #e9cdbd}
+ul.lux li::before{content:'✦';position:absolute;left:0;color:var(--rose-deep)}
+.entourage{background:radial-gradient(ellipse at center,#651223 0%,#28040e 75%);color:#f6e8dc;position:relative}
+.entourage::before{content:'';position:absolute;inset:22px;border:1px solid rgba(201,155,134,.35);pointer-events:none}
+.entourage h2.title{color:#fff5eb}
+.ent-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:42px}
+@media(max-width:820px){.ent-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.ent-grid{grid-template-columns:1fr}}
+.ent-box{background:linear-gradient(180deg,rgba(255,255,255,.09),rgba(255,255,255,.02));border:1px solid rgba(201,155,134,.55);border-radius:14px;padding:32px 22px;backdrop-filter:blur(6px)}
+.ent-box h4{font-family:'Cormorant Garamond',serif;font-size:1.25rem;letter-spacing:2px;text-transform:uppercase;color:#ffffff;margin-bottom:10px;font-weight:600}
+.ent-box ul{list-style:none;font-family:'Cormorant Garamond',serif;font-size:1.18rem;font-style:italic;line-height:2.05;color:#f3dcc9;font-weight:400}
+.ent-box li strong{color:#f3dcc9;font-weight:400;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.18rem}
+.ent-box .tbd{font-style:italic;font-family:'Cormorant Garamond',serif;font-size:1.18rem;color:#f3dcc9;opacity:1;font-weight:400}
+.ninong{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:20px;background:linear-gradient(105deg,rgba(201,155,134,.22),rgba(255,255,255,.06));border:1px solid var(--rose)}
+@media(max-width:600px){.ninong{grid-template-columns:1fr}}
+.qr-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:34px}
+@media(max-width:700px){.qr-grid{grid-template-columns:1fr}}
+.qr-card{background:#fff;border-radius:16px;padding:28px 22px;border:1px solid #e9cdbd;box-shadow:0 18px 40px rgba(101,18,35,.08)}
+.qr-card img{width:180px;height:180px;border:6px solid #fdf8f2;outline:1px solid var(--rose);border-radius:12px;margin:14px auto;display:block}
+.qr-card a{display:inline-block;margin-top:10px;color:var(--burgundy2);font-size:.82rem;letter-spacing:1px;font-weight:600}
+.practical-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:40px;text-align:left}
+@media(max-width:780px){.practical-grid{grid-template-columns:1fr}}
+.p-box{background:#fff;border-radius:16px;padding:34px 30px;border:1px solid #e9cdbd;box-shadow:0 18px 40px rgba(101,18,35,.08);position:relative;overflow:hidden}
+.p-box::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,#a6725e,#f3dcc9,#a6725e)}
+.badge{display:inline-block;background:var(--velvet);color:var(--rose-light);font-size:.65rem;letter-spacing:3px;text-transform:uppercase;padding:7px 16px;border-radius:30px;margin-bottom:14px;border:1px solid var(--rose)}
+.p-box h4{font-size:1.55rem;color:var(--burgundy);margin-bottom:8px}
+.p-box p{font-size:.94rem;color:#5f3d42}
+.attire-wrap{margin:18px 0 10px;background:#fff;border:1px solid #e9cdbd;border-radius:12px;overflow:hidden}
+.attire-wrap img{width:100%;height:380px;object-fit:cover;object-position:50% 8%;display:block;background:#fff}
+.attire-wrap figcaption{padding:14px 12px 16px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;color:var(--burgundy);text-align:center;line-height:1.5;border-top:1px solid #e9cdbd}
+#attireFallback,#motifFallback{display:none;padding:30px 20px;text-align:center;font-size:.85rem;color:#8a6a6e}
+.rsvp-box{max-width:700px;margin:34px auto 0;background:#fff;border-radius:20px;padding:44px 38px;text-align:center;box-shadow:var(--shadow);border:1px solid #e9cdbd;position:relative}
+.rsvp-box::before{content:'J ♥ K';position:absolute;top:-22px;left:50%;transform:translateX(-50%);background:var(--velvet);color:var(--rose-light);font-family:'Great Vibes',cursive;font-size:1.5rem;padding:6px 28px;border-radius:30px;border:1px solid var(--rose)}
+.rsvp-iframe{width:100%;height:980px;border:0;border-radius:12px;background:#fffdf8;margin-top:20px}
+footer{background:var(--velvet);color:#e8c4b5;text-align:center;padding:70px 20px 40px;position:relative}
+footer::before{content:'';position:absolute;top:18px;left:18px;right:18px;bottom:18px;border:1px solid rgba(201,155,134,.3);pointer-events:none}
+footer .script{font-size:3rem;color:var(--rose-light)}
+
+/* Filipino traditional wedding welcome cover */
+body.cover-open{overflow:hidden}
+.welcome-cover{
+  position:fixed;inset:0;z-index:9000;display:flex;align-items:flex-end;justify-content:center;
+  padding:0 20px 5.5vh;text-align:center;color:var(--blush);
+  background:#28040e url('./filipino-wedding-cover.png') center center/contain no-repeat;
+  transition:opacity .9s ease,visibility .9s ease;
+}
+.welcome-cover.is-opening{opacity:0;visibility:hidden}
+.cover-content{position:relative;z-index:1;width:min(760px,100%);height:1px}
+.cover-open-btn{
+  position:absolute;left:50%;top:0;transform:translate(-50%,-50%);
+  width:min(220px,55vw);height:58px;opacity:0;cursor:pointer;
+  border:0;background:transparent;color:transparent;font-size:0;
+}
+.cover-open-btn:focus-visible{opacity:1;outline:3px solid #f3dcc9;outline-offset:3px;border-radius:8px}
+@media(max-width:600px){
+  .welcome-cover{background-size:contain;padding-bottom:7vh}
+  .cover-content{width:100%}
+  .cover-open-btn{width:42vw;height:52px}
+}
+</style>
+</head>
+<body>
+<div id="loader"><div class="mono">J & K</div><p>Opening Invitation</p></div>
+<div class="welcome-cover" id="welcomeCover" role="dialog" aria-modal="true" aria-label="Wedding invitation cover">
+  <div class="cover-content">
+    <button class="cover-open-btn" id="openInvitation" type="button" aria-label="Enter wedding invitation">Open wedding invitation</button>
+  </div>
+</div>
+    <p class="cover-date">January 10, 2027</p>
+    <p class="cover-place">Alcala, Pangasinan • Philippines</p>
+    <button class="cover-open-btn" id="openInvitation" type="button">Open Invitation</button>
+    <p class="cover-hint">A celebration of love, faith &amp; family</p>
+  </div>
+</div>
+<nav id="nav">
+<a class="logo" href="#home"><div class="logo-mark">J & K</div><div class="logo-text"><span>Jeg Whistly & Kenryu</span><small>10 . 01 . 2027</small></div></a>
+<button class="menu-btn" onclick="document.querySelector('.links').classList.toggle('open')">MENU</button>
+<div class="links">
+<a href="#home">Home</a><a href="#invitation">Invitation</a><a href="#venue">Venues</a><a href="#entourage">Entourage</a><a href="#details">Details</a><a href="#rsvp">RSVP</a>
+</div>
+</nav>
+<header class="hero" id="home">
+<div class="hero-inner">
+<div class="crest"><span>J & K</span></div>
+<div class="verse">And above all these put on love, which binds everything together in perfect harmony. — Colossians 3:14</div>
+<div class="top-label">Together with their beloved families</div>
+<h1>Jeg Whistly Ferrer <i>Gacutan</i><div class="amp">&</div>Kenryu Nulla <i>Gacutan</i></h1>
+<div class="orn">❦ ✦ ❦</div>
+<p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.15rem;color:#f5e6d6;max-width:660px;margin:0 auto;">Malugod po namin kayong inaanyayahan — with joyful hearts rooted in faith and family, join us as two hearts, two families, become one in love and forever.</p>
+<div class="hero-date" style="margin-top:18px;"><b>Sunday, January 10, 2027 at 9AM</b><br>Holy Cross Parish Church • Alcala, Pangasinan</div>
+<br>
+<a class="btn" href="#invitation">View Invitation</a>
+<a class="btn btn-ghost" href="#rsvp">Reserve Your Seat</a>
+</div>
+</header>
+<div class="ribbon">Pag-ibig &nbsp; • &nbsp; Pamilya &nbsp; • &nbsp; Pananampalataya &nbsp; • &nbsp; 01 . 10 . 2027 &nbsp; • &nbsp; #JegMeetsKenryuForever</div>
+<section id="invitation" style="background:radial-gradient(circle at top,#fffdf8,#fdf8f2)">
+<div class="wrap reveal">
+<div class="script-sub">Paanyaya</div>
+<div class="eyebrow">A Traditional Filipino Invitation</div>
+<h2 class="title">With the Blessing of God <br>and Their Parents</h2>
+<div class="gold-divider">❦</div>
+<p class="lead">Sa basbas ng Diyos at ng kanilang mga magulang, kayo po ay malugod na inaanyayahan sa banal na pag-iisang dibdib ng kanilang mga anak.</p>
+<div class="parchment">
+<p style="letter-spacing:3px;text-transform:uppercase;font-size:.72rem;color:var(--rose-deep)">Mr. Francisco Espirito Gacutan Jr and Mrs. Judy Ferrer Gacutan</p>
+<p style="font-size:.85rem;font-style:italic">together with</p>
+<p style="letter-spacing:3px;text-transform:uppercase;font-size:.72rem;color:var(--rose-deep)">Mrs. Emelda Aguilar Nulla</p>
+<div class="gold-divider">✦</div>
+<p style="letter-spacing:3px;text-transform:uppercase;font-size:.75rem">request the honour of your presence at the marriage of their children</p>
+<div class="couple-names">Jeg Whistly <em>&</em> Kenryu Nulla</div>
+<p style="font-family:'Cormorant Garamond',serif;font-size:1.25rem;color:var(--burgundy);line-height:1.6">Sunday, the Tenth of January, Two Thousand Twenty-Seven<br>at nine o'clock in the morning<br><strong>Holy Cross Parish Church, Alcala, Pangasinan, Philippines</strong></p>
+<div class="countdown" id="countdown">
+<div class="cd"><strong id="d">0</strong><span>Days</span></div>
+<div class="cd"><strong id="h">0</strong><span>Hours</span></div>
+<div class="cd"><strong id="m">0</strong><span>Minutes</span></div>
+<div class="cd"><strong id="s">0</strong><span>Seconds</span></div>
+</div>
+<p style="margin-top:18px;font-size:.82rem;font-style:italic;color:#8a6a6e">Holy Mass, Candle, Veil and Cord Rites to follow • Kindly be seated before 9AM</p>
+</div>
+</div>
+</section>
+<section class="venues" id="venue">
+<div class="wrap reveal">
+<div class="script-sub">Where and When</div>
+<div class="eyebrow">Ceremony and Reception</div>
+<h2 class="title">Seremonya at Resepsyon</h2>
+<div class="gold-divider">❦</div>
+<div class="grid2">
+<div class="venue-card">
+<div class="img" style="background-image:url('https://images.unsplash.com/photo-1438032005730-c779502df39b?w=800&q=80')"><span>9:00 AM • Ceremony • Kasal</span></div>
+<div class="body"><h3>Holy Cross Parish Church</h3><p>Alcala, Pangasinan, Philippines. Solemn Nuptial Mass begins promptly at 9AM. Kindly arrive early for seating.</p><ul class="lux"><li>Nuptial Mass with Candle, Veil and Cord</li><li>Please avoid walking across the aisle once the ceremony has begun</li><li>Formal attire required</li></ul></div>
+</div>
+<div class="venue-card">
+<div class="img" style="background-image:url('https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=800&q=80')"><span>Cocktails 3PM • Dinner 7PM • Reception</span></div>
+<div class="body"><h3>ISLA STO. THOMAS RESORT</h3><p>Brgy. Santo Domingo, Santo Tomas, Pangasinan, Philippines. Celebration continues with cocktails at 3PM and dinner at 7PM.</p><ul class="lux"><li>Cocktails: 3PM • Dinner: 7PM</li><li>Resort celebration under the stars</li><li>Please follow seating arrangement</li><li>Evening program: to be announced</li></ul></div>
+</div>
+</div>
+<div class="qr-grid">
+<div class="qr-card">
+<span class="badge">Scan to Navigate - Church</span>
+<h4 style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--burgundy)">Holy Cross Parish Church</h4>
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&color=4a0a18&data=https%3A%2F%2Fwww.google.com%2Fmaps%2Fplace%2FHoly%2BCross%2BParish%2BChurch%2BRoman%2BCatholic%2F%4015.8449344%2C120.5212078%2C17z" alt="QR Code Church" />
+<br><a href="https://www.google.com/maps/place/Holy+Cross+Parish+Church+-+Roman+Catholic/@15.8449344,120.5212078,17z/data=!3m1!4b1!4m6!3m5!1s0x3391480724cec77d:0x1fc4e10a3b0796e5!8m2!3d15.8449344!4d120.5212078!16s%2Fg%2F1tf77mk6?entry=ttu&g_ep=EgoyMDI2MTEwNC4wIKXMDSoASAFQAw%3D%3D" target="_blank">Open in Google Maps →</a>
+</div>
+<div class="qr-card">
+<span class="badge">Scan to Navigate - Venue</span>
+<h4 style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--burgundy)">ISLA STO. THOMAS RESORT</h4>
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&color=4a0a18&data=https%3A%2F%2Fwww.google.com%2Fmaps%2Fplace%2FISLA%2BSTO.%2BTHOMAS%2BRESORT%2F%4015.863109%2C120.5773716%2C17z" alt="QR Code Venue" />
+<br><a href="https://www.google.com/maps/place/ISLA+STO.+THOMAS+RESORT/@15.863109,120.5773716,17z/data=!3m1!4b1!4m6!3m5!1s0x339139a2712986dd:0x46cf5a82f3ca1414!8m2!3d15.8631039!4d120.5799465!16s%2Fg%2F11kj44bxv0?entry=ttu&g_ep=EgoyMDI2MTEwNC4wIKXMDSoASAFQAw%3D%3D" target="_blank">Open in Google Maps →</a>
+</div>
+</div>
+</div>
+</section>
+<section class="entourage" id="entourage">
+<div class="wrap reveal">
+<div class="script-sub" style="color:#ffffff">Our Honoured Party</div>
+<div class="eyebrow" style="color:#ffffff">Abay • Ninong at Ninang</div>
+<h2 class="title">Wedding Entourage</h2>
+<div class="gold-divider" style="color:#ffffff">❦</div>
+<p style="max-width:720px;margin:0 auto;color:#e8c4b5;">With heartfelt gratitude, we present those who will stand with us and guide us in married life.</p>
+<div class="ent-grid">
+<div class="ent-box ninong">
+<div><h4>Ninong - Principal Sponsors</h4><ul><li>1. <span class="tbd">To be announced</span></li><li>2. <span class="tbd">To be announced</span></li><li>3. <span class="tbd">To be announced</span></li><li>4. <span class="tbd">To be announced</span></li><li>5. <span class="tbd">To be announced</span></li><li>6. <span class="tbd">To be announced</span></li><li>7. <span class="tbd">To be announced</span></li><li>8. <span class="tbd">To be announced</span></li><li>9. <span class="tbd">To be announced</span></li></ul></div>
+<div><h4>Ninang - Principal Sponsors</h4><ul><li>1. <span class="tbd">To be announced</span></li><li>2. <span class="tbd">To be announced</span></li><li>3. <span class="tbd">To be announced</span></li><li>4. <span class="tbd">To be announced</span></li><li>5. <span class="tbd">To be announced</span></li><li>6. <span class="tbd">To be announced</span></li><li>7. <span class="tbd">To be announced</span></li><li>8. <span class="tbd">To be announced</span></li><li>9. <span class="tbd">To be announced</span></li></ul></div>
+</div>
+<div class="ent-box"><h4>Best Man</h4><ul><li><strong>Franz Joshua Ferrer Gacutan</strong></li></ul><br><h4>Maid of Honor</h4><ul><li><strong>Queen Shiela Mae Aguilar Nulla</strong></li></ul></div>
+<div class="ent-box"><h4>Secondary Sponsors</h4><ul><li><strong>Candle:</strong><br>Jeric Gacutan and Stephanie Villanda</li><li><strong>Veil:</strong><br>Kent Nulla and Mary Knoll Gacutan</li><li><strong>Cord:</strong><br>Marion Javier and Joane Javier</li></ul></div>
+<div class="ent-box"><h4>Groomsmen</h4><ul><li><strong>Emie Ferrer</strong></li><li><strong>Edriel Ferrer</strong></li><li><strong>Floyd Carino</strong></li><li><strong>Ian Noces</strong></li><li><strong>EJ Costales</strong></li><li><strong>Nathan De Leon</strong></li></ul></div>
+<div class="ent-box"><h4>Bridesmaids</h4><ul><li><strong>Kim Cabael Terrado</strong></li><li><strong>Gleana Cammelle Comcom</strong></li><li><strong>Myca Mendoza</strong></li><li><strong>Maria Gloria Faye Aguilar</strong></li><li><strong>Bridgette Nebriaga</strong></li><li><strong>April Mae Costales</strong></li></ul></div>
+<div class="ent-box"><h4>Flower Girls</h4><ul><li><strong>Keistly Jeiryne Gacutan</strong></li><li><strong>Maria Franzia Gacutan</strong></li><li><strong>Mari Jydelle Javier</strong></li><li><strong>Dhalia Aguilar</strong></li></ul></div>
+<div class="ent-box"><h4>Ring, Bible and Coins</h4><ul><li><strong>Ring Bearer:</strong> Marcus Franz Gacutan</li><li><strong>Bible Bearer:</strong> Ezekiel Costales</li><li><strong>Coin Bearer:</strong> Rowan Macaraeg</li></ul></div>
+<div class="ent-box"><h4>Readers and Alay</h4><ul><li><strong>Readers:</strong> Erlinda Deleon</li><li><strong>Alay:</strong> Juanita Ferrer</li></ul></div>
+</div>
+</div>
+</section>
+<section id="details">
+<div class="wrap reveal">
+<div class="script-sub">Good to Know</div>
+<div class="eyebrow">Etiquette and Essentials</div>
+<h2 class="title">Mga Paalala Para sa Panauhin</h2>
+<div class="gold-divider">❦</div>
+<div class="practical-grid">
+<div class="p-box"><span class="badge">Dress Code / Motif</span><h4>Modern Classic</h4><p>Gentlemen in Barong Tagalog. Ladies in modern Filipiniana.</p>
+<div class="attire-wrap">
+<img id="attireImg" src="./philippines-attire.png" alt="Traditional Barong Tagalog and Filipiniana" onerror="attireError()" />
+<div id="attireFallback">Upload your file as <b>philippines-attire.png</b> next to index.html to show the Barong & Filipiniana illustration here.</div>
+<figcaption>Traditional Barong Tagalog & Filipiniana<br><span style="font-family:Montserrat,sans-serif;font-size:.7rem;letter-spacing:2px;">GENTLEMEN IN BARONG • LADIES IN FILIPINIANA</span></figcaption>
+</div>
+<div class="attire-wrap">
+<img id="motifImg" src="./motif-flowers.png" alt="Modern Classic Motif Inspiration" style="height:300px;object-position:center;" onerror="motifError()" />
+<div id="motifFallback">Upload your file as <b>motif-flowers.png</b> next to index.html to show the motif inspiration here.</div>
+<figcaption>Modern Classic Motif Inspiration<br><span style="font-family:Montserrat,sans-serif;font-size:.7rem;letter-spacing:2px;">FRESH • TIMELESS • ELEGANT</span></figcaption>
+</div>
+<ul class="lux"><li>Strictly formal • No denim or slippers</li></ul></div>
+<div class="p-box"><span class="badge">Gift Note</span><h4>Your Presence is the Greatest Gift</h4><p>Your presence is the greatest gift to us. If you wish to bless us further, a monetary gift would be sincerely appreciated, as we will be returning to Canada after our wedding and may not be able to bring traditional gifts with us. Your generosity will help us as we begin again together. Thank you for the love and support!</p></div>
+<div class="p-box"><span class="badge">Little Ones</span><h4>Children Policy</h4><p>Please keep an eye on your little ones throughout the celebration. During the ceremony, kindly ensure they remain seated and avoid running, shouting, or disturbing the proceedings. We appreciate your cooperation in making our special day comfortable and enjoyable for everyone.</p></div>
+<div class="p-box"><span class="badge">Photos & Devices</span><h4>Devices Friendly Celebration</h4><p>Feel free to capture our special moments! Kindly keep your phones on silent during the Mass and avoid walking across the aisle to take photos. Please tag <strong>#JegMeetsKenryuForever</strong> so we can relive the day through your eyes!</p><ul class="lux"><li>Devices friendly — photos allowed</li><li>Arrive early for 9AM Mass</li></ul></div>
+</div>
+</div>
+</section>
+<section id="rsvp" style="background:linear-gradient(180deg,#fdf8f2,#fbeeea)">
+<div class="wrap reveal">
+<div class="script-sub">Will You Celebrate With Us?</div>
+<div class="eyebrow">Repondez S'il Vous Plait</div>
+<h2 class="title">RSVP • Kumpirmahin ang Pagdalo</h2>
+<div class="gold-divider">❦</div>
+<p class="lead">Kindly confirm on or before <strong>December 30, 2026</strong>. For inquiries: <strong>gacutankenryu@gmail.com</strong> • Plus-ones allowed up to max of 2, subject to confirmation.</p>
+<div class="rsvp-box">
+<p style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-style:italic;color:var(--burgundy)">Please fill out our official form below — your response saves automatically to our guest list.</p>
+<a class="btn" style="margin-top:16px;" href="https://docs.google.com/forms/d/e/1FAIpQLSf2_--VLPdtW40WY4hrvNdYJMC8F4R4TuoUVi0IzV5-BQanzQ/viewform" target="_blank">Open RSVP Form in New Tab</a>
+<iframe class="rsvp-iframe" src="https://docs.google.com/forms/d/e/1FAIpQLSf2_--VLPdtW40WY4hrvNdYJMC8F4R4TuoUVi0IzV5-BQanzQ/viewform?embedded=true" loading="lazy" title="Wedding RSVP Form">Loading RSVP form…</iframe>
+<p style="margin-top:14px;font-size:.85rem;color:#8a6a6e;">Having trouble? Email us at <strong>gacutankenryu@gmail.com</strong></p>
+</div>
+</div>
+</section>
+<footer>
+<div class="script">Jeg Whistly and Kenryu</div>
+<p style="letter-spacing:4px;text-transform:uppercase;font-size:.75rem;margin-top:10px">10 . 01 . 2027 • Alcala, Pangasinan • #JegMeetsKenryuForever</p>
+<p style="margin-top:12px;font-size:.8rem;opacity:.7">Mr. Francisco Espirito Gacutan Jr and Mrs. Judy Ferrer Gacutan together with Mrs. Emelda Aguilar Nulla • Colossians 3:14</p>
+</footer>
+<script>
+
+document.body.classList.add('cover-open');
+const welcomeCover = document.getElementById('welcomeCover');
+const openInvitationButton = document.getElementById('openInvitation');
+openInvitationButton.addEventListener('click', () => {
+  welcomeCover.classList.add('is-opening');
+  document.body.classList.remove('cover-open');
+  window.setTimeout(() => welcomeCover.remove(), 950);
+});
+window.addEventListener('load',()=>{setTimeout(()=>document.getElementById('loader').classList.add('hide'),800);});
+setTimeout(()=>document.getElementById('loader').classList.add('hide'),3500);
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>60);});
+const target=new Date('2027-01-10T09:00:00+08:00').getTime();
+function tick(){
+let diff=Math.max(0,target-Date.now());
+document.getElementById('d').textContent=Math.floor(diff/86400000);
+document.getElementById('h').textContent=Math.floor(diff%86400000/3600000);
+document.getElementById('m').textContent=Math.floor(diff%3600000/60000);
+document.getElementById('s').textContent=Math.floor(diff%60000/1000);
+}
+setInterval(tick,1000);tick();
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+function attireError(){
+var img=document.getElementById('attireImg');
+if(!img.dataset.tried1){img.dataset.tried1='1';img.src='./philippines-attire.png.jpg';return;}
+if(!img.dataset.tried2){img.dataset.tried2='1';img.src='./philippines-attire.jpg';return;}
+img.style.display='none';
+document.getElementById('attireFallback').style.display='block';
+}
+function motifError(){
+var img=document.getElementById('motifImg');
+if(!img.dataset.tried1){img.dataset.tried1='1';img.src='./motif-flowers.jpg';return;}
+if(!img.dataset.tried2){img.dataset.tried2='1';img.src='./motif-flowers.jpeg';return;}
+img.style.display='none';
+document.getElementById('motifFallback').style.display='block';
+}
+</script>
+</body>
+</html>
