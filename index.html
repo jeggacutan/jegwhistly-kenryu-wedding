@@ -268,6 +268,41 @@ footer .script{font-size:3rem;color:var(--rose-light)}
   }
 }
 
+
+/* LUXURY FILIPINO ROYAL ENTOURAGE */
+.entourage{background:radial-gradient(ellipse at 50% 5%,#701e34 0%,#4a0a18 45%,#28040e 100%)}
+.entourage .wrap{position:relative;z-index:1}
+.ent-intro{max-width:680px;margin:0 auto 34px;color:#e8c4b5;font-size:.95rem}
+.ent-featured{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin:32px 0 24px}
+.ent-person{border:1px solid #c99b86;border-radius:16px;padding:32px 22px;background:linear-gradient(145deg,rgba(201,155,134,.21),rgba(255,255,255,.035));box-shadow:0 18px 35px rgba(0,0,0,.15);position:relative}
+.ent-person:before{content:'';position:absolute;inset:8px;border:1px solid rgba(201,155,134,.28);border-radius:10px;pointer-events:none}
+.ent-role,.ent-ritual span{display:block;color:#e8c4b5;letter-spacing:2px;text-transform:uppercase;font-size:.67rem;font-weight:600}
+.ent-flourish,.ent-card-symbol{display:block;color:#c99b86;font-size:1.3rem;margin:8px 0}
+.ent-person h3{font-size:clamp(1.5rem,3vw,2.2rem);line-height:1.25;color:#fff5eb;font-weight:500}
+.sponsor-accordion{margin:0 auto 30px;text-align:left;border:1px solid #c99b86;border-radius:16px;overflow:hidden;background:rgba(255,255,255,.06)}
+.sponsor-accordion summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:22px 28px;background:linear-gradient(90deg,rgba(201,155,134,.22),rgba(255,255,255,.03))}
+.sponsor-accordion summary::-webkit-details-marker{display:none}
+.sponsor-accordion summary small{display:block;text-transform:uppercase;letter-spacing:2px;color:#e8c4b5;font-size:.68rem}
+.sponsor-accordion summary strong{display:block;font-family:'Cormorant Garamond',serif;font-size:1.85rem;color:#fff5eb;font-weight:600;line-height:1.3}
+.sponsor-accordion summary em{display:block;color:#e8c4b5;font-size:.78rem;font-style:normal}
+.sponsor-chevron{font-size:2rem;color:#f3dcc9;transition:transform .25s}
+.sponsor-accordion[open] .sponsor-chevron{transform:rotate(180deg)}
+.sponsor-content{padding:25px 26px 30px;text-align:center}
+.sponsor-content>p{color:#e8c4b5;margin-bottom:20px;font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-style:italic}
+.sponsors-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;list-style:none;counter-reset:sponsors;padding:0;margin:0}
+.sponsors-list li{counter-increment:sponsors;display:flex;align-items:center;gap:12px;padding:12px 14px;border:1px solid rgba(201,155,134,.35);border-radius:10px;background:rgba(255,255,255,.045);color:#f3dcc9;text-align:left;font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-style:italic}
+.sponsors-list li:before{content:counter(sponsors,decimal-leading-zero);color:#e8c4b5;font-family:'Montserrat',sans-serif;font-style:normal;font-size:.68rem;letter-spacing:1px;min-width:25px}
+.ent-upgraded-grid{grid-template-columns:repeat(3,minmax(0,1fr));margin-top:0;gap:20px}
+.ent-upgraded-grid .ent-box{padding:28px 18px;border-radius:15px;transition:transform .25s,border-color .25s;background:linear-gradient(160deg,rgba(255,255,255,.09),rgba(255,255,255,.025))}
+.ent-upgraded-grid .ent-box:hover{transform:translateY(-4px);border-color:#f3dcc9}
+.ent-upgraded-grid .ent-box h4{font-size:1.22rem;color:#fff5eb;border-bottom:1px solid rgba(201,155,134,.35);padding-bottom:13px;margin-bottom:16px}
+.ent-upgraded-grid .ent-box ul{font-style:normal;line-height:1.65;font-size:1.14rem}
+.ent-upgraded-grid .ent-box li{padding:4px 0}
+.ent-ritual{margin:12px 0 16px}
+.ent-ritual p{font-family:'Cormorant Garamond',serif;color:#f3dcc9;font-size:1.16rem;line-height:1.5;margin-top:4px}
+@media(max-width:820px){.ent-upgraded-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.ent-featured,.ent-upgraded-grid,.sponsors-list{grid-template-columns:1fr}.sponsor-accordion summary{padding:18px}.sponsor-content{padding:18px}.ent-person{padding:26px 16px}}
+
 </style>
 </head>
 <body>
@@ -357,14 +392,6 @@ footer .script{font-size:3rem;color:var(--rose-light)}
       <li>Come ready to dance and celebrate!</li>
     </ul>
 
-    <a
-      class="btn"
-      href="https://www.google.com/maps/place/MJ+DiamondKey+Commercial+Building/@15.8490061,120.5337485,17z"
-      target="_blank"
-      rel="noopener noreferrer">
-      Get Directions
-    </a>
-
   </div>
 </div>
 <!-- END PRE-WEDDING DANCE PARTY -->
@@ -395,11 +422,8 @@ footer .script{font-size:3rem;color:var(--rose-light)}
     MJ DiamondKey Commercial Building
   </h4>
 
-  <p>Saturday, January 9, 2027</p>
-  <p>6:00 PM - 11:00 PM</p>
-
   <img
-    src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&amp;data=https%3A%2F%2Fwww.google.com%2Fmaps%2Fsearch%2F%3Fapi%3D1%26query%3D15.8490061%252C120.5337485"
+    src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&amp;color=4a0a18&amp;bgcolor=ffffff&amp;data=https%3A%2F%2Fwww.google.com%2Fmaps%2Fsearch%2F%3Fapi%3D1%26query%3D15.8490061%252C120.5337485"
     alt="Pre-Wedding Dance Party Location QR Code"
     loading="lazy"
   >
@@ -417,63 +441,45 @@ footer .script{font-size:3rem;color:var(--rose-light)}
 <div class="qr-card">
 <span class="badge">Scan to Navigate - Church</span>
 <h4 style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--burgundy)">Holy Cross Parish Church</h4>
-<img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&color=4a0a18&data=https%3A%2F%2Fwww.google.com%2Fmaps%2Fplace%2FHoly%2BCross%2BParish%2BChurch%2BRoman%2BCatholic%2F%4015.8449344%2C120.5212078%2C17z" alt="QR Code Church" />
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&amp;color=4a0a18&amp;bgcolor=ffffff&amp;data=https%3A%2F%2Fwww.google.com%2Fmaps%2Fplace%2FHoly%2BCross%2BParish%2BChurch%2BRoman%2BCatholic%2F%4015.8449344%2C120.5212078%2C17z" alt="QR Code Church" />
 <br><a href="https://www.google.com/maps/place/Holy+Cross+Parish+Church+-+Roman+Catholic/@15.8449344,120.5212078,17z/data=!3m1!4b1!4m6!3m5!1s0x3391480724cec77d:0x1fc4e10a3b0796e5!8m2!3d15.8449344!4d120.5212078!16s%2Fg%2F1tf77mk6?entry=ttu&g_ep=EgoyMDI2MTEwNC4wIKXMDSoASAFQAw%3D%3D" target="_blank">Open in Google Maps ?</a>
 </div>
 <div class="qr-card">
 <span class="badge">Scan to Navigate - Venue</span>
 <h4 style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--burgundy)">ISLA STO. THOMAS RESORT</h4>
-<img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&color=4a0a18&data=https%3A%2F%2Fwww.google.com%2Fmaps%2Fplace%2FISLA%2BSTO.%2BTHOMAS%2BRESORT%2F%4015.863109%2C120.5773716%2C17z" alt="QR Code Venue" />
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&amp;color=4a0a18&amp;bgcolor=ffffff&amp;data=https%3A%2F%2Fwww.google.com%2Fmaps%2Fplace%2FISLA%2BSTO.%2BTHOMAS%2BRESORT%2F%4015.863109%2C120.5773716%2C17z" alt="QR Code Venue" />
 <br><a href="https://www.google.com/maps/place/ISLA+STO.+THOMAS+RESORT/@15.863109,120.5773716,17z/data=!3m1!4b1!4m6!3m5!1s0x339139a2712986dd:0x46cf5a82f3ca1414!8m2!3d15.8631039!4d120.5799465!16s%2Fg%2F11kj44bxv0?entry=ttu&g_ep=EgoyMDI2MTEwNC4wIKXMDSoASAFQAw%3D%3D" target="_blank">Open in Google Maps ?</a>
 </div>
 </div>
 </div>
 </section>
 <section class="entourage" id="entourage">
-<div class="wrap reveal">
-<div class="script-sub" style="color:#ffffff">Our Honoured Party</div>
-<div class="eyebrow" style="color:#ffffff">Abay • Ninong at Ninang</div>
-<h2 class="title">Wedding Entourage</h2>
-<div class="gold-divider" style="color:#ffffff">?</div>
-<p style="max-width:720px;margin:0 auto;color:#e8c4b5;">With heartfelt gratitude, we present those who will stand with us and guide us in married life.</p>
-<div class="ent-grid">
+  <div class="wrap reveal">
+    <div class="script-sub" style="color:#f3dcc9">Ang Aming Mga Abay</div>
+    <div class="eyebrow" style="color:#e8c4b5">With Love and Gratitude</div>
+    <h2 class="title">Our Wedding Entourage</h2>
+    <div class="gold-divider">✦</div>
+    <p class="ent-intro">With heartfelt gratitude, we honour the family and friends who will stand beside us as we begin our married life.</p>
 
-<!-- PRINCIPAL SPONSORS -->
-<div class="ent-box ninong">
-  <div class="sponsors-section">
+    <div class="ent-featured">
+      <article class="ent-person"><span class="ent-role">Best Man</span><span class="ent-flourish">✦</span><h3>Franz Joshua Ferrer Gacutan</h3></article>
+      <article class="ent-person"><span class="ent-role">Maid of Honor</span><span class="ent-flourish">✦</span><h3>Queen Shiela Mae Aguilar Nulla</h3></article>
+    </div>
 
-    <h4>Principal Sponsors</h4>
-    <p>Mga Ninong at Ninang</p>
+    <details class="sponsor-accordion">
+      <summary><span><small>Principal Sponsors</small><strong>Mga Ninong at Ninang</strong><em>60 honoured pairs · Tap to view names</em></span><span class="sponsor-chevron" aria-hidden="true">⌄</span></summary>
+      <div class="sponsor-content"><p>We are grateful for the wisdom and guidance of our principal sponsors.</p><ol class="sponsors-list" id="sponsorList"></ol></div>
+    </details>
 
-    <ul class="sponsors-list" id="sponsorList">
-    </ul>
-
+    <div class="ent-grid ent-upgraded-grid">
+      <article class="ent-box"><span class="ent-card-symbol">✦</span><h4>Secondary Sponsors</h4><div class="ent-ritual"><span>Candle Sponsors</span><p>Jeric Gacutan &amp; Stephanie Villanda</p></div><div class="ent-ritual"><span>Veil Sponsors</span><p>Kent Nulla &amp; Mary Knoll Gacutan</p></div><div class="ent-ritual"><span>Cord Sponsors</span><p>Marion Javier &amp; Joane Javier</p></div></article>
+      <article class="ent-box"><span class="ent-card-symbol">✦</span><h4>Groomsmen</h4><ul><li>Emie Ferrer</li><li>Edriel Ferrer</li><li>Floyd Carino</li><li>Ian Noces</li><li>EJ Costales</li><li>Nathan De Leon</li></ul></article>
+      <article class="ent-box"><span class="ent-card-symbol">✦</span><h4>Bridesmaids</h4><ul><li>Kim Cabael Terrado</li><li>Gleana Cammelle Comcom</li><li>Myca Mendoza</li><li>Maria Gloria Faye Aguilar</li><li>Bridgette Nebriaga</li><li>April Mae Costales</li></ul></article>
+      <article class="ent-box"><span class="ent-card-symbol">✦</span><h4>Flower Girls</h4><ul><li>Keistly Jeiryne Gacutan</li><li>Maria Franzia Gacutan</li><li>Mari Jydelle Javier</li><li>Dhalia Aguilar</li></ul></article>
+      <article class="ent-box"><span class="ent-card-symbol">✦</span><h4>Ring, Bible &amp; Coins</h4><div class="ent-ritual"><span>Ring Bearer</span><p>Marcus Franz Gacutan</p></div><div class="ent-ritual"><span>Bible Bearer</span><p>Rowan Macaraeg</p></div><div class="ent-ritual"><span>Coin Bearer</span><p>Ezekiel Costales</p></div></article>
+      <article class="ent-box"><span class="ent-card-symbol">✦</span><h4>Readers &amp; Alay</h4><div class="ent-ritual"><span>Reader</span><p>Erlinda Deleon</p></div><div class="ent-ritual"><span>Alay</span><p>Juanita Ferrer</p></div></article>
+    </div>
   </div>
-</div>
-
-<script>
-  const sponsorList = document.getElementById("sponsorList");
-
-  for (let i = 1; i <= 60; i++) {
-    const sponsor = document.createElement("li");
-
-    sponsor.textContent =
-      i + ". Mr. & Mrs. — To be announced";
-
-    sponsorList.appendChild(sponsor);
-  }
-</script>
-
-</div>
-<div class="ent-box"><h4>Best Man</h4><ul><li><strong>Franz Joshua Ferrer Gacutan</strong></li></ul><br><h4>Maid of Honor</h4><ul><li><strong>Queen Shiela Mae Aguilar Nulla</strong></li></ul></div>
-<div class="ent-box"><h4>Secondary Sponsors</h4><ul><li><strong>Candle:</strong><br>Jeric Gacutan and Stephanie Villanda</li><li><strong>Veil:</strong><br>Kent Nulla and Mary Knoll Gacutan</li><li><strong>Cord:</strong><br>Marion Javier and Joane Javier</li></ul></div>
-<div class="ent-box"><h4>Groomsmen</h4><ul><li><strong>Emie Ferrer</strong></li><li><strong>Edriel Ferrer</strong></li><li><strong>Floyd Carino</strong></li><li><strong>Ian Noces</strong></li><li><strong>EJ Costales</strong></li><li><strong>Nathan De Leon</strong></li></ul></div>
-<div class="ent-box"><h4>Bridesmaids</h4><ul><li><strong>Kim Cabael Terrado</strong></li><li><strong>Gleana Cammelle Comcom</strong></li><li><strong>Myca Mendoza</strong></li><li><strong>Maria Gloria Faye Aguilar</strong></li><li><strong>Bridgette Nebriaga</strong></li><li><strong>April Mae Costales</strong></li></ul></div>
-<div class="ent-box"><h4>Flower Girls</h4><ul><li><strong>Keistly Jeiryne Gacutan</strong></li><li><strong>Maria Franzia Gacutan</strong></li><li><strong>Mari Jydelle Javier</strong></li><li><strong>Dhalia Aguilar</strong></li></ul></div>
-<div class="ent-box"><h4>Ring, Bible and Coins</h4><ul><li><strong>Ring Bearer:</strong> Marcus Franz Gacutan</li><li><strong>Bible Bearer:</strong> Rowan Macaraeg</li><li><strong>Coin Bearer:</strong> Ezekiel Costales</li></ul></div>
-<div class="ent-box"><h4>Readers and Alay</h4><ul><li><strong>Readers:</strong> Erlinda Deleon</li><li><strong>Alay:</strong> Juanita Ferrer</li></ul></div>
-</div>
-</div>
 </section>
 <section id="details">
 <div class="wrap reveal">
@@ -521,6 +527,16 @@ footer .script{font-size:3rem;color:var(--rose-light)}
 <p style="margin-top:12px;font-size:.8rem;opacity:.7">Mr. Francisco Espiritu Gacutan Jr and Mrs. Judy Ferrer Gacutan together with Mrs. Emelda Aguilar Nulla • Colossians 3:14</p>
 </footer>
 <script>
+
+// Principal sponsors: 60 editable pairs
+const sponsorList = document.getElementById('sponsorList');
+if (sponsorList) {
+  for (let i = 1; i <= 60; i++) {
+    const li = document.createElement('li');
+    li.textContent = 'Mr. & Mrs. — To be announced';
+    sponsorList.appendChild(li);
+  }
+}
 window.addEventListener('load',()=>{setTimeout(()=>document.getElementById('loader').classList.add('hide'),800);});
 setTimeout(()=>document.getElementById('loader').classList.add('hide'),3500);
 const nav=document.getElementById('nav');
