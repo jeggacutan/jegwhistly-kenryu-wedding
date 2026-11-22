@@ -311,7 +311,7 @@ nav{padding:16px clamp(18px,4vw,58px);background:linear-gradient(180deg,rgba(31,
 nav.scrolled{box-shadow:0 10px 32px rgba(40,4,14,.19)}
 nav .logo-mark{box-shadow:inset 0 0 0 4px rgba(201,155,134,.13)}
 nav a:focus-visible,.btn:focus-visible,.qr-card a:focus-visible{outline:3px solid #dfbba0;outline-offset:4px}
-.hero{background:linear-gradient(135deg,rgba(31,3,12,.86),rgba(74,10,24,.80)),url('./filipino-wedding-cover.png') center/cover no-repeat;min-height:100svh}
+.hero{background:linear-gradient(135deg,rgba(31,3,12,.86),rgba(74,10,24,.80)),url('./wedding-cover-photo.jpg') center 57%/cover no-repeat;min-height:100svh}
 .hero::before{inset:17px;border-color:rgba(243,220,201,.6)}
 .hero::after{inset:25px}
 .hero-inner{padding:30px 10px}
@@ -541,7 +541,7 @@ footer p{max-width:780px;margin-inline:auto}
     </div>
 
     <details class="sponsor-accordion">
-      <summary><span><small>Principal Sponsors</small><strong>Mga Ninong at Ninang</strong><em>60 honoured pairs · Tap to view names</em></span><span class="sponsor-chevron" aria-hidden="true">⌄</span></summary>
+      <summary><span><small>Principal Sponsors</small><strong>Mga Ninong at Ninang</strong><em>30 confirmed sponsors · Tap to view names</em></span><span class="sponsor-chevron" aria-hidden="true">⌄</span></summary>
       <div class="sponsor-content"><p>We are grateful for the wisdom and guidance of our principal sponsors.</p><ol class="sponsors-list" id="sponsorList"></ol></div>
     </details>
 
@@ -599,15 +599,48 @@ footer p{max-width:780px;margin-inline:auto}
 </footer>
 <script>
 
-// Principal sponsors: 60 editable pairs
+// Principal sponsors: 30 confirmed entries, followed by 30 editable placeholders.
+const sponsorNames = [
+  "Mr. Brando Andaya & Mrs. Raquel Andaya",
+  "PMAJ. Edgar Allan G. Serquina & Mrs. Angeli M. Serquina",
+  "Mr. Ildefonso Andaya & Mrs. Mary Andaya",
+  "Mr. Edwin S. Ferrer & Mrs. Genalyn N. Ferrer",
+  "Mr. Cleofe Nebriaga & Mrs. Joan Nebriaga",
+  "Mr. Mario C. Javier & Mrs. Evelyn T. Javier",
+  "Mr. Geoffrey Jhun Cabreros & Mrs. Janine Joy Cabreros",
+  "Mr. Danilo Asuncion & Mrs. Catalina G. Asuncion",
+  "Mr. Josephino Alvarez & Mrs. Remely Alvarez",
+  "Mr. Jose Escano & Dr. Editha S. Escano",
+  "Mr. Carmelito Comcom & Mrs. Glenda Comcom",
+  "Mrs. Maricar Bauman",
+  "Mr. Wilfredo Agbuya & Mrs. Gloria Agbuya",
+  "Mr. Rizal Silaya & Mrs. Anabelle F. Silaya",
+  "Mr. Genaro Daguro & Mrs. Marilou Daguro",
+  "Mrs. Nemia M. Galsim",
+  "Mr. Ronald Dinglasan & Mrs. Jannet Dinglasan",
+  "Mr. Melchor Gagnao & Mrs. Marietta F. Gagnao",
+  "Mrs. Maria Theresa Mendoza",
+  "Mr. Francis Ferrer & Mrs. Marilou N. Ferrer",
+  "Mrs. Marlyn Mendoza Totaan",
+  "Mr. Rico N. Villanda & Mrs. Ruby Lyn M. Villanda",
+  "Mrs. Sherryl Lagmay",
+  "Mrs. Teresita Antonio",
+  "Mr. Randy Salva & Mrs. Jennifer Salva",
+  "Mr. Ernani Costales & Mrs. Marilyn G. Costale",
+  "Mr. Jamel Salva & Mrs. Cristina Salva",
+  "Mr. Rodolfo Villanda & Mrs. Josie F. Villanda",
+  "Mrs. Analyn Abarro & Mr. Richard Serquina",
+  "Mrs. Rosario Hernandez & Mrs. Jakilyn Gan"
+];
 const sponsorList = document.getElementById('sponsorList');
 if (sponsorList) {
-  for (let i = 1; i <= 60; i++) {
+  for (let i = 0; i < 60; i++) {
     const li = document.createElement('li');
-    li.textContent = 'Mr. & Mrs. — To be announced';
+    li.textContent = sponsorNames[i] || 'To be announced';
     sponsorList.appendChild(li);
   }
 }
+
 window.addEventListener('load',()=>{setTimeout(()=>document.getElementById('loader').classList.add('hide'),800);});
 setTimeout(()=>document.getElementById('loader').classList.add('hide'),3500);
 const nav=document.getElementById('nav');
