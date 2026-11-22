@@ -391,10 +391,55 @@ footer p{max-width:780px;margin-inline:auto}
   line-height: 1.65;
   color: #f3dcc9;
 }
+/* Animated Filipino royal wedding invitation opening */
+.wedding-opening{background:radial-gradient(circle at 50% 35%,#6b1c30 0%,#4a0a18 43%,#22030c 100%)!important;overflow:hidden;padding:24px;text-align:center}
+.wedding-opening::before{content:"";position:absolute;inset:17px;border:1px solid rgba(243,220,201,.42);pointer-events:none}
+.wedding-opening::after{content:"";position:absolute;inset:25px;border:1px solid rgba(201,155,134,.20);pointer-events:none}
+.opening-content{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;max-width:100%;animation:openingFade 1s ease both}
+.opening-eyebrow{font:500 .66rem 'Montserrat',sans-serif;letter-spacing:3.5px;text-transform:uppercase;color:#f3dcc9;margin-bottom:30px}
+.opening-envelope{width:min(270px,70vw);height:175px;position:relative;perspective:700px;margin:15px auto 35px;filter:drop-shadow(0 20px 22px rgba(0,0,0,.3))}
+.opening-envelope-back{position:absolute;inset:0;background:#d5a990;border:1px solid #f5dfc8;border-radius:4px}
+.opening-envelope-front{position:absolute;inset:0;background:linear-gradient(140deg,#f4d6be,#c9957d);clip-path:polygon(0 0,50% 55%,100% 0,100% 100%,0 100%);z-index:4;border-radius:3px}
+.opening-envelope-flap{position:absolute;inset:0;background:linear-gradient(160deg,#f8e3ce,#d3a38b);clip-path:polygon(0 0,100% 0,50% 61%);z-index:5;transform-origin:50% 0%;animation:openingFlap 1.15s ease-in-out 1s both}
+.opening-letter{position:absolute;left:9%;right:9%;bottom:8px;height:145px;background:#fffaf3;border:1px solid #c99b86;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;animation:openingLetter 1.15s ease-out 1.5s both}
+.opening-letter span{font:500 2.25rem 'Cormorant Garamond',serif;color:#4a0a18}
+.opening-letter i{font:1.8rem 'Great Vibes',cursive;color:#a6725e}
+.opening-letter small{font:.58rem 'Montserrat',sans-serif;letter-spacing:2px;color:#81525b}
+.opening-seal{position:absolute;z-index:6;left:50%;top:55%;transform:translate(-50%,-50%);width:43px;height:43px;border-radius:50%;display:grid;place-items:center;background:#4a0a18;border:2px solid #c99b86;color:#f3dcc9;animation:openingSeal .5s ease 1s both}
+.opening-names{font:500 clamp(2rem,6vw,3.5rem) 'Cormorant Garamond',serif;color:#fff5eb;line-height:1.15;animation:openingFade 1s ease 1.65s both}
+.opening-names span{font-family:'Great Vibes',cursive;color:#dfbba0;padding:0 5px}
+.wedding-opening .opening-caption{font:.72rem 'Montserrat',sans-serif;color:#e8c4b5;letter-spacing:1px;margin-top:10px;animation:openingFade 1s ease 1.85s both;text-transform:none}
+.opening-skip{position:relative;z-index:8;margin-top:24px;background:transparent;border:1px solid #c99b86;border-radius:30px;color:#f3dcc9;padding:11px 22px;font:500 .68rem 'Montserrat',sans-serif;letter-spacing:1px;cursor:pointer;animation:openingFade 1s ease 2s both}
+.opening-skip:hover,.opening-skip:focus-visible{background:rgba(243,220,201,.15);outline-offset:4px}
+.opening-spark{position:absolute;color:#d9b59d;font-size:2.2rem;opacity:.6;animation:openingTwinkle 2.5s ease-in-out infinite alternate}
+.opening-spark-one{top:19%;left:15%}.opening-spark-two{bottom:22%;right:14%;animation-delay:1s}
+@keyframes openingFade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@keyframes openingFlap{from{transform:rotateX(0);z-index:5}to{transform:rotateX(180deg);z-index:1}}
+@keyframes openingLetter{from{transform:translateY(0)}to{transform:translateY(-63px)}}
+@keyframes openingSeal{to{opacity:0;transform:translate(-50%,-50%) scale(.5)}}
+@keyframes openingTwinkle{to{opacity:.15;transform:scale(.7) rotate(20deg)}}
+@media(max-width:480px){.opening-eyebrow{letter-spacing:2px}.opening-envelope{margin-bottom:20px}.opening-skip{margin-top:18px}}
+@media(prefers-reduced-motion:reduce){.wedding-opening *{animation:none!important}.opening-envelope-flap,.opening-seal{display:none}.opening-letter{transform:translateY(-50px)}}
 </style>
 </head>
 <body>
-<div id="loader"><div class="mono">J & K</div><p>Opening Invitation</p></div>
+<div id="loader" class="wedding-opening" role="status" aria-label="Opening wedding invitation">
+  <div class="opening-spark opening-spark-one" aria-hidden="true">✦</div>
+  <div class="opening-spark opening-spark-two" aria-hidden="true">✧</div>
+  <div class="opening-content">
+    <div class="opening-eyebrow">You are cordially invited</div>
+    <div class="opening-envelope" aria-hidden="true">
+      <div class="opening-letter"><span>J <i>&amp;</i> K</span><small>10 • 01 • 2027</small></div>
+      <div class="opening-envelope-back"></div>
+      <div class="opening-envelope-flap"></div>
+      <div class="opening-envelope-front"></div>
+      <div class="opening-seal">✦</div>
+    </div>
+    <div class="opening-names">Jeg Whistly <span>&amp;</span> Kenryu</div>
+    <p class="opening-caption">A celebration of love, faith &amp; family</p>
+    <button class="opening-skip" type="button" onclick="closeWeddingOpening()">Enter Our Wedding Website →</button>
+  </div>
+</div>
 <nav id="nav">
 <a class="logo" href="#home"><div class="logo-mark">J & K</div><div class="logo-text"><span>Jeg Whistly & Kenryu</span><small>10 . 01 . 2027</small></div></a>
 <button class="menu-btn" onclick="document.querySelector('.links').classList.toggle('open')">MENU</button>
@@ -655,8 +700,15 @@ if (sponsorList) {
   }
 }
 
-window.addEventListener('load',()=>{setTimeout(()=>document.getElementById('loader').classList.add('hide'),800);});
-setTimeout(()=>document.getElementById('loader').classList.add('hide'),3500);
+function closeWeddingOpening(){
+  const opening = document.getElementById('loader');
+  if(opening) { opening.classList.add('hide'); opening.setAttribute('aria-hidden','true'); }
+}
+document.addEventListener('DOMContentLoaded', () => {
+  setTimeout(closeWeddingOpening, 4500);
+});
+// Fallback ensures visitors can always enter, even if external resources hang.
+setTimeout(closeWeddingOpening, 6500);
 const nav=document.getElementById('nav');
 window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>60);});
 const target=new Date('2027-01-10T09:00:00+08:00').getTime();
