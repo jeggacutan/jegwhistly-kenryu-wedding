@@ -393,7 +393,7 @@ footer p{max-width:780px;margin-inline:auto}
 <div class="crest"><span>J & K</span></div>
 <div class="verse">And above all these put on love, which binds everything together in perfect harmony. — Colossians 3:14</div>
 <div class="top-label">Together with their beloved families</div>
-<h1>Jeg Whistly Ferrer <i>Gacutan</i><div class="amp">&</div>Kenryu Nulla <i>Gacutan</i></h1>
+<h1>Jeg Whistly<div class="amp">&</div>Kenryu</h1>
 <div class="orn">✦</div>
 <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.15rem;color:#f5e6d6;max-width:660px;margin:0 auto;">Malugod po namin kayong inaanyayahan — with joyful hearts rooted in faith and family, join us as two hearts, two families, become one in love and forever.</p>
 <div class="hero-date" style="margin-top:18px;"><b>Sunday, January 10, 2027 at 9AM</b><br>Holy Cross Parish Church • Alcala, Pangasinan</div>
@@ -416,7 +416,7 @@ footer p{max-width:780px;margin-inline:auto}
 <p style="letter-spacing:3px;text-transform:uppercase;font-size:.72rem;color:var(--rose-deep)">Mrs. Emelda Aguilar Nulla</p>
 <div class="gold-divider">✦</div>
 <p style="letter-spacing:3px;text-transform:uppercase;font-size:.75rem">request the honour of your presence at the marriage of their children</p>
-<div class="couple-names">Jeg Whistly <em>&</em> Kenryu Nulla</div>
+<div class="couple-names">Jeg Whistly <em>&</em> Kenryu</div>
 <p style="font-family:'Cormorant Garamond',serif;font-size:1.25rem;color:var(--burgundy);line-height:1.6">Sunday, the Tenth of January, Two Thousand Twenty-Seven<br>at nine o'clock in the morning<br><strong>Holy Cross Parish Church, Alcala, Pangasinan, Philippines</strong></p>
 <div class="countdown" id="countdown">
 <div class="cd"><strong id="d">0</strong><span>Days</span></div>
@@ -593,13 +593,13 @@ footer p{max-width:780px;margin-inline:auto}
 </div>
 </section>
 <footer>
-<div class="script">Jeg Whistly and Kenryu</div>
+<div class="script">Jeg Whistly &amp; Kenryu</div>
 <p style="letter-spacing:4px;text-transform:uppercase;font-size:.75rem;margin-top:10px">10 . 01 . 2027 • Alcala, Pangasinan • #JegMeetsKenryuForever</p>
 <p style="margin-top:12px;font-size:.8rem;opacity:.7">Mr. Francisco Espiritu Gacutan Jr and Mrs. Judy Ferrer Gacutan together with Mrs. Emelda Aguilar Nulla • Colossians 3:14</p>
 </footer>
 <script>
 
-// Principal sponsors: 30 confirmed entries, followed by 30 editable placeholders.
+// Principal sponsors: display only the 30 named entries.
 const sponsorNames = [
   "Mr. Brando Andaya & Mrs. Raquel Andaya",
   "PMAJ. Edgar Allan G. Serquina & Mrs. Angeli M. Serquina",
@@ -634,9 +634,9 @@ const sponsorNames = [
 ];
 const sponsorList = document.getElementById('sponsorList');
 if (sponsorList) {
-  for (let i = 0; i < 60; i++) {
+  for (let i = 0; i < sponsorNames.length; i++) {
     const li = document.createElement('li');
-    li.textContent = sponsorNames[i] || 'To be announced';
+    li.textContent = sponsorNames[i];
     sponsorList.appendChild(li);
   }
 }
