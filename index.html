@@ -400,16 +400,16 @@ footer p{max-width:780px;margin-inline:auto}
 .opening-envelope{width:min(270px,70vw);height:175px;position:relative;perspective:700px;margin:15px auto 35px;filter:drop-shadow(0 20px 22px rgba(0,0,0,.3))}
 .opening-envelope-back{position:absolute;inset:0;background:#d5a990;border:1px solid #f5dfc8;border-radius:4px}
 .opening-envelope-front{position:absolute;inset:0;background:linear-gradient(140deg,#f4d6be,#c9957d);clip-path:polygon(0 0,50% 55%,100% 0,100% 100%,0 100%);z-index:4;border-radius:3px}
-.opening-envelope-flap{position:absolute;inset:0;background:linear-gradient(160deg,#f8e3ce,#d3a38b);clip-path:polygon(0 0,100% 0,50% 61%);z-index:5;transform-origin:50% 0%;animation:openingFlap 1.15s ease-in-out 1s both}
-.opening-letter{position:absolute;left:9%;right:9%;bottom:8px;height:145px;background:#fffaf3;border:1px solid #c99b86;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;animation:openingLetter 1.15s ease-out 1.5s both}
+.opening-envelope-flap{position:absolute;inset:0;background:linear-gradient(160deg,#f8e3ce,#d3a38b);clip-path:polygon(0 0,100% 0,50% 61%);z-index:5;transform-origin:50% 0%;animation:openingFlap 2s ease-in-out 1.7s both}
+.opening-letter{position:absolute;left:9%;right:9%;bottom:8px;height:145px;background:#fffaf3;border:1px solid #c99b86;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;animation:openingLetter 2.1s ease-out 3s both}
 .opening-letter span{font:500 2.25rem 'Cormorant Garamond',serif;color:#4a0a18}
 .opening-letter i{font:1.8rem 'Great Vibes',cursive;color:#a6725e}
 .opening-letter small{font:.58rem 'Montserrat',sans-serif;letter-spacing:2px;color:#81525b}
-.opening-seal{position:absolute;z-index:6;left:50%;top:55%;transform:translate(-50%,-50%);width:43px;height:43px;border-radius:50%;display:grid;place-items:center;background:#4a0a18;border:2px solid #c99b86;color:#f3dcc9;animation:openingSeal .5s ease 1s both}
-.opening-names{font:500 clamp(2rem,6vw,3.5rem) 'Cormorant Garamond',serif;color:#fff5eb;line-height:1.15;animation:openingFade 1s ease 1.65s both}
+.opening-seal{position:absolute;z-index:6;left:50%;top:55%;transform:translate(-50%,-50%);width:43px;height:43px;border-radius:50%;display:grid;place-items:center;background:#4a0a18;border:2px solid #c99b86;color:#f3dcc9;animation:openingSeal .7s ease 1.7s both}
+.opening-names{font:500 clamp(2rem,6vw,3.5rem) 'Cormorant Garamond',serif;color:#fff5eb;line-height:1.15;animation:openingFade 1.5s ease 5.2s both}
 .opening-names span{font-family:'Great Vibes',cursive;color:#dfbba0;padding:0 5px}
-.wedding-opening .opening-caption{font:.72rem 'Montserrat',sans-serif;color:#e8c4b5;letter-spacing:1px;margin-top:10px;animation:openingFade 1s ease 1.85s both;text-transform:none}
-.opening-skip{position:relative;z-index:8;margin-top:24px;background:transparent;border:1px solid #c99b86;border-radius:30px;color:#f3dcc9;padding:11px 22px;font:500 .68rem 'Montserrat',sans-serif;letter-spacing:1px;cursor:pointer;animation:openingFade 1s ease 2s both}
+.wedding-opening .opening-caption{font:.72rem 'Montserrat',sans-serif;color:#e8c4b5;letter-spacing:1px;margin-top:10px;animation:openingFade 1.5s ease 5.7s both;text-transform:none}
+.opening-skip{position:relative;z-index:8;margin-top:24px;background:transparent;border:1px solid #c99b86;border-radius:30px;color:#f3dcc9;padding:11px 22px;font:500 .68rem 'Montserrat',sans-serif;letter-spacing:1px;cursor:pointer;animation:openingFade 1.5s ease 6.2s both}
 .opening-skip:hover,.opening-skip:focus-visible{background:rgba(243,220,201,.15);outline-offset:4px}
 .opening-spark{position:absolute;color:#d9b59d;font-size:2.2rem;opacity:.6;animation:openingTwinkle 2.5s ease-in-out infinite alternate}
 .opening-spark-one{top:19%;left:15%}.opening-spark-two{bottom:22%;right:14%;animation-delay:1s}
@@ -705,10 +705,10 @@ function closeWeddingOpening(){
   if(opening) { opening.classList.add('hide'); opening.setAttribute('aria-hidden','true'); }
 }
 document.addEventListener('DOMContentLoaded', () => {
-  setTimeout(closeWeddingOpening, 4500);
+  setTimeout(closeWeddingOpening, 10000);
 });
 // Fallback ensures visitors can always enter, even if external resources hang.
-setTimeout(closeWeddingOpening, 6500);
+setTimeout(closeWeddingOpening, 12000);
 const nav=document.getElementById('nav');
 window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>60);});
 const target=new Date('2027-01-10T09:00:00+08:00').getTime();
