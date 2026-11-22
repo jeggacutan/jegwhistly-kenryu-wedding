@@ -370,6 +370,13 @@ footer p{max-width:780px;margin-inline:auto}
 @media(max-width:620px){section:not(.entourage){padding:72px 16px}.hero{padding:110px 20px 65px}.hero::before{inset:10px}.hero::after{inset:16px}.hero .btn{display:block;max-width:300px;margin:15px auto 0}.hero .btn-ghost{margin:12px auto 0}.ribbon{font-size:.62rem;letter-spacing:1.4px}.venues .venue-card .img{height:225px}.venues .qr-card img{width:180px}#invitation .countdown{gap:9px}#invitation .cd{min-width:calc(50% - 9px);padding:13px 9px}#rsvp .rsvp-iframe{height:780px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.venues .venue-card,#details .p-box,.btn{transition:none}}
 
+
+/* Single external inspiration link replaces both dress-code images */
+.attire-inspiration{display:flex;flex-direction:column;align-items:center;gap:9px;text-align:center;margin:22px 0;padding:28px 18px;border:1px solid #d7b29e;border-radius:16px;background:linear-gradient(145deg,#fffaf5,#f6e6dc);color:#4a0a18;text-decoration:none;transition:transform .25s,box-shadow .25s}
+.attire-inspiration:hover,.attire-inspiration:focus-visible{transform:translateY(-3px);box-shadow:0 14px 30px rgba(74,10,24,.13)}
+.attire-inspiration-icon{width:78px;height:78px;border-radius:50%;display:grid;place-items:center;background:#4a0a18;color:#f3dcc9;border:2px solid #c99b86}
+.attire-inspiration strong{font-family:'Cormorant Garamond',serif;font-size:1.55rem;line-height:1.2}
+.attire-inspiration span:last-child{font-size:.8rem;line-height:1.6;color:#76545a}
 </style>
 </head>
 <body>
@@ -556,16 +563,13 @@ footer p{max-width:780px;margin-inline:auto}
 <div class="gold-divider">✦</div>
 <div class="practical-grid">
 <div class="p-box"><span class="badge">Dress Code / Motif</span><h4>Modern Classic</h4><p>Gentlemen in Barong Tagalog. Ladies in modern Filipiniana.</p>
-<div class="attire-wrap">
-<img id="attireImg" src="./philippines-attire.png" alt="Traditional Barong Tagalog and Filipiniana" onerror="attireError()" />
-<div id="attireFallback">Upload your file as <b>philippines-attire.png</b> next to index.html to show the Barong & Filipiniana illustration here.</div>
-<figcaption>Traditional Barong Tagalog & Filipiniana<br><span style="font-family:Montserrat,sans-serif;font-size:.7rem;letter-spacing:2px;">GENTLEMEN IN BARONG • LADIES IN FILIPINIANA</span></figcaption>
-</div>
-<div class="attire-wrap">
-<img id="motifImg" src="./motif-flowers.png" alt="Modern Classic Motif Inspiration" style="height:300px;object-position:center;" onerror="motifError()" />
-<div id="motifFallback">Upload your file as <b>motif-flowers.png</b> next to index.html to show the motif inspiration here.</div>
-<figcaption>Modern Classic Motif Inspiration<br><span style="font-family:Montserrat,sans-serif;font-size:.7rem;letter-spacing:2px;">FRESH • TIMELESS • ELEGANT</span></figcaption>
-</div>
+<a class="attire-inspiration" href="./attire-gallery.html" target="_blank" rel="noopener noreferrer" aria-label="View our wedding dress code and motif inspiration gallery">
+  <span class="attire-inspiration-icon" aria-hidden="true">
+    <svg viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+  </span>
+  <strong>View Dress Code &amp; Motif Inspiration</strong>
+  <span>Tap to see our guest and principal sponsor attire photos ↗</span>
+</a>
 <ul class="lux"><li>Strictly formal • No denim or slippers</li></ul></div>
 <div class="p-box"><span class="badge">Gift Note</span><h4>Your Presence is the Greatest Gift</h4><p>Your presence is the greatest gift to us. If you wish to bless us further, a monetary gift would be sincerely appreciated, as we will be returning to Canada after our wedding and may not be able to bring traditional gifts with us. Your generosity will help us as we begin again together. Thank you for the love and support!</p></div>
 <div class="p-box"><span class="badge">Little Ones</span><h4>Children Policy</h4><p>Please keep an eye on your little ones throughout the celebration. During the ceremony, kindly ensure they remain seated and avoid running, shouting, or disturbing the proceedings. We appreciate your cooperation in making our special day comfortable and enjoyable for everyone.</p></div>
@@ -619,20 +623,6 @@ document.getElementById('s').textContent=Math.floor(diff%60000/1000);
 setInterval(tick,1000);tick();
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.12});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-function attireError(){
-var img=document.getElementById('attireImg');
-if(!img.dataset.tried1){img.dataset.tried1='1';img.src='./philippines-attire.png.jpg';return;}
-if(!img.dataset.tried2){img.dataset.tried2='1';img.src='./philippines-attire.jpg';return;}
-img.style.display='none';
-document.getElementById('attireFallback').style.display='block';
-}
-function motifError(){
-var img=document.getElementById('motifImg');
-if(!img.dataset.tried1){img.dataset.tried1='1';img.src='./motif-flowers.jpg';return;}
-if(!img.dataset.tried2){img.dataset.tried2='1';img.src='./motif-flowers.jpeg';return;}
-img.style.display='none';
-document.getElementById('motifFallback').style.display='block';
-}
 </script>
 </body>
 </html>
