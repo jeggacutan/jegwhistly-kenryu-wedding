@@ -127,6 +127,63 @@ ul.lux li::before{content:'?';position:absolute;left:0;color:var(--rose-deep)}
 footer{background:var(--velvet);color:#e8c4b5;text-align:center;padding:70px 20px 40px;position:relative}
 footer::before{content:'';position:absolute;top:18px;left:18px;right:18px;bottom:18px;border:1px solid rgba(201,155,134,.3);pointer-events:none}
 footer .script{font-size:3rem;color:var(--rose-light)}
+  
+/* PRINCIPAL SPONSORS - NINONG & NINANG */
+
+.ninong {
+  grid-column: 1 / -1;
+  display: block;
+  text-align: center;
+  background: linear-gradient(
+    105deg,
+    rgba(201,155,134,.22),
+    rgba(255,255,255,.06)
+  );
+  border: 1px solid #c99b86;
+}
+
+.sponsors-section {
+  width: 100%;
+  margin: auto;
+}
+
+.sponsors-section h4 {
+  color: #fff5eb;
+  font-size: 1.8rem;
+  margin-bottom: 5px;
+}
+
+.sponsors-section p {
+  color: #e8c4b5;
+  font-style: italic;
+  margin-bottom: 24px;
+}
+
+.sponsors-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  list-style: none;
+  padding: 0;
+}
+
+.sponsors-list li {
+  border: 1px solid rgba(201,155,134,.45);
+  border-radius: 10px;
+  padding: 15px;
+  color: #f3dcc9;
+  background: rgba(255,255,255,.05);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  font-style: italic;
+}
+
+@media (max-width: 600px) {
+  .sponsors-list {
+    grid-template-columns: 1fr;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -218,10 +275,24 @@ footer .script{font-size:3rem;color:var(--rose-light)}
 <div class="gold-divider" style="color:#ffffff">?</div>
 <p style="max-width:720px;margin:0 auto;color:#e8c4b5;">With heartfelt gratitude, we present those who will stand with us and guide us in married life.</p>
 <div class="ent-grid">
-<div class="ent-box ninong">
-<div><h4>Ninong - Principal Sponsors</h4><ul><li>1. <span class="tbd">To be announced</span></li><li>2. <span class="tbd">To be announced</span></li><li>3. <span class="tbd">To be announced</span></li><li>4. <span class="tbd">To be announced</span></li><li>5. <span class="tbd">To be announced</span></li><li>6. <span class="tbd">To be announced</span></li><li>7. <span class="tbd">To be announced</span></li><li>8. <span class="tbd">To be announced</span></li><li>9. <span class="tbd">To be announced</span></li></ul></div>
-  <div><h4>Ninang - Principal Sponsors</h4><ul><li>1. <span class="tbd">To be announced</span></li><li>2. <span class="tbd">To be announced</span></li><li>3. <span class="tbd">To be announced</span></li><li>4. <span class="tbd">To be announced</span></li><li>5. <span class="tbd">To be announced</span></li><li>6. <span class="tbd">To be announced</span></li><li>7. <span class="tbd">To be announced</span></li><li>8. <span class="tbd">To be announced</span></li><li>9. <span class="tbd">To be announced</span></li></ul></div>
 
+<div class="ent-box ninong">
+  <div class="sponsors-section">
+    <h4>Principal Sponsors</h4>
+    <p>Mga Ninong at Ninang</p>
+
+    <ul class="sponsors-list">
+      <li>Mr. &amp; Mrs. — To be announced</li>
+      <li>Mr. &amp; Mrs. — To be announced</li>
+      <li>Mr. &amp; Mrs. — To be announced</li>
+      <li>Mr. &amp; Mrs. — To be announced</li>
+      <li>Mr. &amp; Mrs. — To be announced</li>
+      <li>Mr. &amp; Mrs. — To be announced</li>
+      <li>Mr. &amp; Mrs. — To be announced</li>
+      <li>Mr. &amp; Mrs. — To be announced</li>
+      <li>Mr. &amp; Mrs. — To be announced</li>
+    </ul>
+  </div>
 </div>
 <div class="ent-box"><h4>Best Man</h4><ul><li><strong>Franz Joshua Ferrer Gacutan</strong></li></ul><br><h4>Maid of Honor</h4><ul><li><strong>Queen Shiela Mae Aguilar Nulla</strong></li></ul></div>
 <div class="ent-box"><h4>Secondary Sponsors</h4><ul><li><strong>Candle:</strong><br>Jeric Gacutan and Stephanie Villanda</li><li><strong>Veil:</strong><br>Kent Nulla and Mary Knoll Gacutan</li><li><strong>Cord:</strong><br>Marion Javier and Joane Javier</li></ul></div>
