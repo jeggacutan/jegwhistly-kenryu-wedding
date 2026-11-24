@@ -569,6 +569,16 @@ footer p{max-width:780px;margin-inline:auto}
 }
 </style>
 
+<script>
+// Always start at Home on a fresh page load or browser restoration.
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+function resetWeddingHome() {
+  if (location.hash) history.replaceState(history.state, '', location.pathname + location.search);
+  window.scrollTo({top: 0, left: 0, behavior: 'instant'});
+}
+resetWeddingHome();
+window.addEventListener('pageshow', resetWeddingHome);
+</script>
 </head>
 <body>
 <div id="loader" class="wedding-opening" role="status" aria-label="Opening wedding invitation">
@@ -865,7 +875,7 @@ if (sponsorList) {
 
 function closeWeddingOpening(){
   const opening = document.getElementById('loader');
-  if(opening) { opening.classList.add('hide'); opening.setAttribute('aria-hidden','true'); }
+  if(opening && !opening.classList.contains('hide')) { resetWeddingHome(); opening.classList.add('hide'); opening.setAttribute('aria-hidden','true'); }
 }
 document.addEventListener('DOMContentLoaded', () => {
   setTimeout(closeWeddingOpening, 10000);
