@@ -486,6 +486,90 @@ footer p{max-width:780px;margin-inline:auto}
 @media(max-width:480px){.opening-eyebrow{letter-spacing:2px}.opening-envelope{margin-bottom:20px}.opening-skip{margin-top:18px}}
 @media(prefers-reduced-motion:reduce){.wedding-opening *{animation:none!important}.opening-envelope-flap,.opening-seal{display:none}.opening-letter{transform:translateY(-50px)}}
 </style>
+ 
+<style>
+/* PRINCIPAL SPONSORS LAYOUT FIX */
+
+#entourage .sponsors-list {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    padding: 0 !important;
+    margin: 15px 0 0;
+    list-style: none !important;
+}
+
+#entourage .sponsors-list li {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center !important;
+    width: 100%;
+    min-width: 0;
+    padding: 12px 10px;
+    line-height: 1.5;
+    white-space: normal;
+    overflow-wrap: break-word;
+    box-sizing: border-box;
+}
+
+#entourage .sponsors-list li::before {
+    content: "❦";
+    display: block;
+    position: static !important;
+    color: #c99b86;
+    font-size: 22px;
+    margin: 0 0 5px;
+}
+
+#entourage .sponsor-content {
+    width: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+}
+
+#entourage .sponsor-accordion summary {
+    text-align: center;
+    padding: 15px 10px;
+}
+
+#entourage .sponsor-accordion summary strong {
+    white-space: normal;
+    line-height: 1.4;
+}
+
+/* MOBILE PHONE FIX */
+
+@media screen and (max-width: 768px) {
+
+    #entourage .sponsors-list {
+        grid-template-columns: 1fr !important;
+        gap: 8px !important;
+    }
+
+    #entourage .sponsors-list li {
+        width: 100%;
+        padding: 10px 8px;
+        font-size: 15px;
+        line-height: 1.5;
+        text-align: center !important;
+    }
+
+    #entourage .sponsor-content {
+        padding: 8px !important;
+    }
+
+    #entourage .sponsor-accordion summary {
+        padding: 12px 8px;
+    }
+
+    #entourage .sponsor-accordion summary strong {
+        font-size: 18px;
+    }
+}
+</style>
+
 </head>
 <body>
 <div id="loader" class="wedding-opening" role="status" aria-label="Opening wedding invitation">
